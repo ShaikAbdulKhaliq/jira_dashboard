@@ -1,0 +1,71 @@
+$background-url: url('../../../logo/logo2.png'); // Update with your image path
+
+#lightMode{
+  background-color:white;
+}
+.loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  background:$background-url;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.loginFormWrapper {
+  width: 25%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: clamp(0.0868rem, 0rem + 1.4889vw, 8.6805625rem);
+  border-radius: clamp(0.034625rem, 0rem + 0.5556vw, 3.4625rem);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.0694375rem, 0rem + 1.1111vw, 6.9444375rem);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.0115rem, 0rem + 0.1952vw, 1.15rem);
+}
+
+.label {
+  font-weight: bold;
+  font-size: clamp(0.07811875rem, 0rem + 1.35vw, 7.8125rem);
+}
+
+.input {
+  width: 100%;
+  padding: clamp(0.034625rem, 0rem + 0.7556vw, 3.4625rem);
+  border: 1px solid #ccc;
+  border-radius: clamp(0.0115rem, 0rem + 0.3852vw, 1.15rem);
+  font-size: clamp(0.0607625rem, 0rem + 1.1122vw, 6.076375rem);
+}
+
+.input.error {
+  border-color: red;
+}
+
+.errorMessage {
+  color: red;
+  font-size: clamp(0.05208125rem, 0rem + 0.9333vw, 5.2083125rem);
+}
+
+.loginButton {
+  padding: clamp(0.034625rem, 0rem + 0.7556vw, 3.4625rem);
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: clamp(0.0115rem, 0rem + 0.3452vw, 1.15rem);
+  font-size: clamp(0.0694375rem, 0rem + 1.2111vw, 6.9444375rem);
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  background-color: #0056b3;
+}

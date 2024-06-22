@@ -1,0 +1,677 @@
+@use "../../../mixin.module.scss";
+@import "../../../mixin.module.scss";
+
+#lightMode {
+  background-color: $lightBackGround;
+  .mainContainer {
+    background-color: $lightBackGround;
+  }
+}
+
+.mainContainer {
+  width: 100vw;
+  min-height: 88vh;
+  overflow: scroll;
+  background-color: $background;
+  padding-top: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+  @include mixin.flex-container(column, flex-start, flex-start);
+  @media only screen and (max-width: 768px) {
+    @include mixin.flex-container(column, flex-start, flex-start);
+  }
+  .mainContent {
+    @media only screen and (max-width: 768px) {
+      @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+    }
+    width: 100vw;
+    height: 87vh;
+    padding-inline: 2vw;
+    @media screen and (min-width: 1024px) and (max-width: 4000px) {
+    }
+
+    @include mixin.flex-container(row, flex-start, flex-start, 1rem);
+    .left {
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+        @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+        height: 72vh;
+        padding-bottom: 0;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        gap: 0.4rem;
+        // height: 73%;
+      }
+      width: 50%;
+      height: 100%;
+      padding: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      padding-top: 0;
+      @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+      .top {
+        @media only screen and (max-width: 768px) {
+          @include mixin.flex-container(column, flex-start, flex-start, 2vw);
+          height: fit-content;
+          max-height: 45%;
+        }
+        width: 100%;
+        min-height: 32vh;
+        transition: height ease-in-out 0.2s;
+        @include mixin.flex-container(column, flex-start, flex-start, 0.5vw);
+        .sprintContainer {
+          @media only screen and (max-width: 768px) {
+            border-radius: 1vw;
+            gap: 0.7rem;
+            height: fit-content;
+          }
+          width: 100%;
+          height: 100%;
+
+          // padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+          overflow: scroll;
+          // background-color: $surface;
+          border-radius: 0.4vw;
+          @include mixin.flex-container(column, flex-start, flex-start, 0.4rem);
+          .tagsContainer {
+            @media only screen and (max-width: 768px) {
+              gap: 0.6rem;
+            }
+
+            width: 100%;
+            min-height: 80%;
+            // min-height: 5vh;
+            position: relative;
+            overflow: scroll;
+            background-color: $surface;
+            border-radius: 0.4vw;
+            @include mixin.flex-container(row, flex-start, flex-start, 1vw);
+            flex-wrap: wrap;
+            padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+
+            .tags {
+              @media only screen and (max-width: 768px) {
+                font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+                // max-width: 7.8rem;
+                // padding: 0.5rem 0.8rem;
+                white-space: nowrap; /* Prevent text from wrapping */
+                overflow: hidden;
+                text-overflow: ellipsis; /* Show ellipsis for overflow text */
+              }
+              @include mixin.flex-container(row, flex-start, flex-start);
+              // box-shadow: 0px 6px 10px 0px #171616;
+              position: relative;
+              width: auto;
+              height: fit-content;
+              cursor: pointer;
+              font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+              border-radius: 4px;
+              padding: 0.25rem 0.5rem;
+              // background-color: $background;
+              background-color: #0f1a28;
+              color: $onSurfaceSecondary;
+              font-weight: 500;
+              transition: ease-in-out 100ms;
+              // background-color: #15012d1f;
+              // color: #a8b5c6;
+              &:hover {
+                scale: 1.05;
+                // background-color: #0080ff20;
+                background-color: $primaryBg;
+              }
+              > p {
+                &:first-child {
+                  color: #cdd0d1;
+                }
+                &:last-child {
+                  color: #4291ff;
+                }
+              }
+            }
+            .membersTags {
+              overflow: visible !important;
+            }
+            > img {
+              position: absolute;
+              width: clamp(1.25rem, 0rem + 1.5625vw, 3.75rem);
+              right: 0;
+              bottom: 0;
+              background-color: #0080ff20;
+              padding: 0.2rem;
+              border-radius: 100%;
+              cursor: pointer;
+            }
+            // #selected {
+            //   background-color: #bb86fc1f;
+            //   color: $primary;
+            // }
+            // .active {
+            //   background-color: #05c6051a !important;
+            //   color: #0dac0d !important;
+            // }
+            .closed {
+              //   background-color: rgba(0, 128, 255, 0.124);
+              // color: #007bff;
+              background-color: #68758220;
+              color: #a2afbe;
+            }
+          }
+          #loaderContainer {
+            @include mixin.flex-container(column, center, center);
+          }
+
+          @media only screen and (max-width: 768px) {
+            .member {
+              font-size: clamp(0.13625rem, 0rem + 2.218vw, 13.625rem);
+              border-radius: 1vw;
+            }
+          }
+        }
+      }
+      .bottom {
+        @media only screen and (max-width: 768px) {
+          min-height: 36vh;
+          max-height: 36vh;
+          gap: 0.4rem;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          // min-height: 80%;
+          gap: 0.4rem;
+        }
+        width: 100%;
+        min-height: 49vh;
+        @include mixin.flex-container(column, flex-start, flex-start, 0.4rem);
+        // .header {
+        //   width: fit-content;
+        //   // span {
+        //   //   gap: 0.3rem;
+        //   //   > p {
+        //   //     box-shadow: none;
+        //   //     background-color: $surface;
+        //   //     width: fit-content;
+        //   //     border-radius: 0.2rem;
+        //   //     padding: 0.7rem 0.6rem;
+        //   //     @media only screen and (max-width: 768px) {
+        //   //       padding: 0.4rem 0.6rem;
+        //   //     }
+        //   //     // &:first-child {
+        //   //     //   padding: 0.1rem 0.6rem;
+        //   //     //   border-radius: 0.2rem;
+        //   //     // }
+        //   //     // &:last-child {
+        //   //     //   // background-color: transparent;
+        //   //     //   // padding: .2rem .4rem;
+        //   //     //   box-shadow: 4px 2px 10px 2px #0f0f0f;
+        //   //     // }
+        //   //   }
+        //   // }
+        // }
+        .chartContainer {
+          @media only screen and (max-width: 768px) {
+            justify-content: center;
+            gap: 0.3rem;
+          }
+          @media screen and (min-width: 768px) and (max-width: 1024px) {
+            justify-content: center;
+            gap: 0.5rem;
+          }
+          width: 100%;
+          height: 98%;
+          border-radius: 0.4vw;
+          overflow: scroll;
+          @include mixin.flex-container(row, space-between, center);
+          row-gap: 0.8rem;
+          flex-wrap: wrap;
+          padding-right: 0.5rem;
+          // background-color: $surface;
+          .pieChart {
+            @media only screen and (max-width: 768px) {
+              width: 100%;
+              height: 200px;
+            }
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+              // width: 33.3%;
+              width: 47%;
+              height: 180px;
+            }
+            // background-color: $surface;
+            border-radius: 0.4vw;
+            width: 49%;
+            height: 200px;
+            // padding: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+            @include mixin.flex-container(column, flex-start, center, 0.5rem);
+            .heading {
+              @media only screen and (max-width: 768px) {
+                font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                min-height: 12%;
+              }
+              @media screen and (min-width: 768px) and (max-width: 1024px) {
+                font-size: clamp(0.7225rem, 0.0003rem + 0.9027vw, 2.166875rem);
+                min-height: 15%;
+              }
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: $surface;
+              width: 100%;
+              min-height: 14%;
+              border-radius: 0.2rem;
+              padding: 0.2rem 0.4rem;
+              text-align: center;
+              background-color: $surface;
+              color: #ffffff;
+              font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+              // color: $onSurfacePrimary;
+              // box-shadow: 0px 6px 10px 0px #171616;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+        max-height: 54vh;
+      }
+      background-color: $background;
+      width: 50%;
+      height: 100%;
+      @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+      padding: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      padding-top: 0;
+      // .header {
+      //   span {
+      //     gap: 0.3rem;
+      //     > p {
+      //       box-shadow: none;
+      //       background-color: $surface;
+      //       width: fit-content;
+      //       border-radius: 0.2rem;
+      //       padding: 0.8rem 0.6rem;
+      //       @media only screen and (max-width: 768px) {
+      //         padding: 0.4rem 0.6rem;
+      //       }
+      //     }
+      //   }
+      // }
+      .mainRightContent {
+        @include mixin.flex-container(column, flex-start, flex-start);
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        background-color: $surface;
+        border-radius: 0.4rem;
+        // padding-top: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+        .legend {
+          @media only screen and (max-width: 768px) {
+            padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            @include mixin.flex-container(row, flex-start, center, 0.4rem);
+            position: relative;
+          }
+          @media screen and (min-width: 768px) and (max-width: 1024px) {
+            gap: 1rem;
+            padding: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+          }
+          width: 100%;
+          min-height: 7%;
+          flex-wrap: wrap;
+          position: relative;
+
+          @include mixin.flex-container(row, flex-start, center, 0.8em);
+          padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+          > span {
+            @media only screen and (max-width: 768px) {
+              gap: 0.2rem;
+            }
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+              gap: 0.4rem;
+            }
+            @include mixin.flex-container(row, flex-start, center, 0.4rem);
+            &:not(&:first-child) {
+              cursor: pointer;
+            }
+            p {
+              &:first-child {
+                @media only screen and (max-width: 768px) {
+                  width: 0.4rem;
+                  height: 0.4rem;
+                }
+                width: 0.8rem;
+                height: 0.8rem;
+                border: none;
+                border-radius: 100%;
+                background-color: white;
+              }
+              &:last-child {
+                @media only screen and (max-width: 768px) {
+                  font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                  border-radius: 0.1rem;
+                  padding: 0.1rem 0.4rem;
+                }
+                @media screen and (min-width: 768px) and (max-width: 1024px) {
+                  font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+                  border-radius: 0.2rem;
+                }
+                font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+                padding-inline: 0.4rem;
+                border-radius: 0.2rem;
+              }
+            }
+          }
+
+          > div {
+            cursor: pointer;
+            @include mixin.flex-container(row, flex-start, center, 0.4rem);
+            p {
+              @media only screen and (max-width: 768px) {
+                font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                border-radius: 0.1rem;
+                padding: 0.1rem 0.4rem;
+              }
+              @media screen and (min-width: 768px) and (max-width: 1024px) {
+                font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+                border-radius: 0.2rem;
+              }
+              font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+              padding-inline: 0.4rem;
+              border-radius: 0.2rem;
+            }
+            img {
+              width: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+              height: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+              margin-bottom: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+            }
+          }
+
+          > img {
+            @media only screen and (max-width: 768px) {
+              width: clamp(1rem, 0rem + 1.25vw, 3rem);
+              height: clamp(1rem, 0rem + 1.25vw, 3rem);
+              position: absolute;
+              right: 0.8rem;
+              top: 2rem;
+            }
+
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+              right: 0.8rem;
+              top: 0.5rem;
+            }
+            width: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+            height: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+            margin-bottom: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+            background-color: #bb86fc1f;
+            position: absolute;
+            right: 0.8rem;
+            top: 0.9rem;
+            border-radius: 100%;
+            border: 0.01rem solid $primary;
+            cursor: pointer;
+          }
+        }
+        .chartContainer {
+          @media only screen and (max-width: 768px) {
+            margin-top: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+          }
+          //  @include mixin.flex-container(column, flex-start, center);
+          width: 100%;
+          height: 93%;
+          overflow: scroll;
+          padding-bottom: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+          #showToolTip {
+            @media only screen and (max-width: 768px) {
+              top: 45%;
+            }
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+              top: 35%;
+            }
+            opacity: 1;
+            visibility: visible;
+            top: 20%;
+          }
+
+          .tooltip {
+            @media only screen and (max-width: 768px) {
+              width: 90%;
+              height: 40%;
+              top: 35%;
+              left: 5%;
+            }
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+              width: 70%;
+              left: 13%;
+              top: 45%;
+            }
+            > img {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: clamp(2rem, 0rem + 2.5vw, 6rem);
+              cursor: pointer;
+            }
+            @include mixin.flex-container(column, space-evenly, flex-start);
+            position: absolute;
+            width: 40%;
+            height: 50%;
+            padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            background-color: rgba(20, 20, 20, 0.934);
+            backdrop-filter: blur(5px);
+            z-index: 1;
+            position: absolute;
+            top: 35%;
+            left: 32%;
+            transform: translateY(-5%);
+            border-radius: 0.4rem;
+            opacity: 0;
+            visibility: hidden;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            // box-shadow: 0px 6px 25px 5px rgb(0, 0, 0);
+            > span {
+              width: 100%;
+              padding-inline: clamp(
+                0.2225rem,
+                0.0003rem + 0.2777vw,
+                0.666875rem
+              );
+              @include mixin.flex-container(row, flex-start, center, 0.5rem);
+              img {
+                width: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+                height: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+                @media only screen and (max-width: 768px) {
+                  width: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                  height: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                }
+                margin-bottom: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+              }
+              p {
+                &:first-child {
+                  @media only screen and (max-width: 768px) {
+                    width: 0.8rem;
+                    height: 0.4rem;
+                  }
+                  @media screen and (min-width: 768px) and (max-width: 1024px) {
+                    width: 0.8rem;
+                    height: 0.6rem;
+                  }
+                  width: 0.8rem;
+                  height: 0.6rem;
+                  border: none;
+                  border-radius: 100%;
+                  // box-shadow: 0px 0px 10px 1px rgb(21, 21, 21);
+                }
+                &:last-child {
+                  @media only screen and (max-width: 768px) {
+                    font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                    border-radius: 0.1rem;
+                    padding: 0.1rem 0.4rem;
+                  }
+                  @media screen and (min-width: 768px) and (max-width: 1024px) {
+                    font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+                  }
+                  font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+                  padding-inline: 0.4rem;
+                  border-radius: 0.2rem;
+                  white-space: wrap; /* Prevent text from wrapping */
+                }
+              }
+            }
+          }
+        }
+      }
+      // padding: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+    }
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #363636;
+  }
+
+  100% {
+    background-color: #161616;
+  }
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show ellipsis for overflow text */
+}
+
+//common styling for header
+.header {
+  width: 100%;
+  @media only screen and (max-width: 768px) {
+  }
+  @include mixin.flex-container(
+    row !important,
+    space-between !important,
+    center !important
+  );
+  > span {
+    @media only screen and (max-width: 768px) {
+      width: fit-content;
+      font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem) !important;
+    }
+    width: fit-content;
+    border-radius: 0.2rem;
+    padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+    padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+    @include mixin.flex-container(row, flex-start, center, 0.2rem);
+    background-color: $surface;
+    > p {
+      color: $onSurfacePrimary;
+      font-weight: 500;
+      letter-spacing: 0.1vw;
+      @media only screen and (max-width: 768px) {
+        font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      }
+      &:first-child {
+        max-width: 100%;
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Show ellipsis for overflow text */
+      }
+      // &:last-child {
+      //   @media only screen and (max-width: 768px) {
+      //     width: min-content;
+      //     height: min-content;
+      //     padding: 0.2rem 0.35rem;
+      //     font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+      //   }
+      //   // width: 1.6vw;
+      //   // height: 1.6vw;
+      //   font-size: clamp(0.7225rem, 0.0003rem + 0.9027vw, 2.166875rem);
+      //   @include mixin.flex-container(row, center, center, 1vw);
+      //   border-radius: 100%;
+      //   // background-color: #bb86fc1f;
+      //   // box-shadow: 4px 2px 10px 2px #171616;
+      //   color: white;
+      // }
+    }
+  }
+  .status {
+    width: 170px;
+    height: 100%;
+    @include mixin.flex-container(row, flex-start, center);
+    position: relative;
+    // background-color: $surface;
+    @media only screen and (max-width: 768px) {
+      @include mixin.flex-container(row, flex-start, flex-end, 0.2rem);
+      width: 150px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      // width: 40%;
+    }
+
+    .border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 0.01rem;
+      background-color: $primary;
+      transition: ease-in-out 200ms;
+    }
+
+    .search {
+      @media only screen and (max-width: 768px) {
+        bottom: 0.2rem;
+        width: clamp(1rem, 0rem + 1.25vw, 3rem);
+      }
+      position: absolute;
+      transform: scaleX(-1);
+      left: 0.2rem;
+      bottom: 0.27rem;
+      width: clamp(1.25rem, 0rem + 1.5625vw, 3.75rem);
+      margin-top: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+    }
+    .cross {
+      @media only screen and (max-width: 768px) {
+        bottom: 0.1rem;
+        right: 0.1rem;
+        width: clamp(1.25rem, 0rem + 1.5625vw, 3.75rem);
+      }
+      position: absolute;
+      right: -0.1rem;
+      bottom: -0.08rem;
+      cursor: pointer;
+      width: clamp(2rem, 0rem + 2.2vw, 6rem);
+      border-radius: 100%;
+      // &:hover {
+      //   background-color: #0e0e0e32;
+      // }
+    }
+
+    input {
+      @media only screen and (max-width: 768px) {
+        padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+        padding-left: 1.4rem;
+        padding-right: 1.5rem;
+        padding-bottom: 0.1rem;
+        font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      }
+      background-color: #0e0e0e32;
+      border: none;
+      outline: none;
+      font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      font-weight: 300;
+      width: 100%;
+      border-radius: 0.2rem;
+      padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+      color: $primary;
+      padding-left: 1.9rem;
+      padding-right: 1.5rem;
+      // padding-bottom: 0.25rem;
+      transition: 0.3s;
+      &:focus {
+        // box-shadow: 0px 6px 10px 0px #171616;
+        // background-color: #29292937;
+      }
+      &:focus ~ .border {
+        width: 100%;
+      }
+    }
+  }
+}

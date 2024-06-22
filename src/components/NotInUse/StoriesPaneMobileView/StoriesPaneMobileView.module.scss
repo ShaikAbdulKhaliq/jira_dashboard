@@ -1,0 +1,140 @@
+@use "../../../mixin.module.scss";
+.none {
+  color: #392467;
+  color: #5d3587;
+  color: #a367b1;
+  color: #ffd1e3;
+  color: #dbbffd;
+}
+.leftPane {
+  width: 100%;
+  padding: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+  .sprintMembersContainer {
+    width: 100%;
+    height: auto;
+    margin-bottom: clamp(
+      0.1078125rem,
+      0rem + 1.7249999999999999vw,
+      10.78125rem
+    );
+    border-radius: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+    background-color: white;
+    padding: clamp(0.05859375rem, 0rem + 1.9375vw, 5.859375rem);
+    .membersHeader {
+      @include mixin.flex-container(row, space-between, flex-start);
+      p {
+        font-size: clamp(0.1953125rem, 0rem + 5.125vw, 19.53125rem);
+        font-weight: 600;
+        color: #5d3587;
+      }
+      button {
+        font-size: clamp(0.1755rem, 0rem + 3.408vw, 17.55rem);
+        padding: 0.5vw 2vw;
+        background-color: #5d3587;
+        outline: none;
+        border: none;
+        color: white;
+        border-radius: 1vw;
+      }
+    }
+    .selectedMemberCont {
+      color: #5d3587;
+      font-weight: 600;
+      margin-bottom: clamp(0.068375rem, 0rem + 1.094vw, 6.8375rem);
+      span {
+        background-color: #a367b1;
+        color: white;
+        padding: 0.2vw 3vw;
+        border-radius: 1vw;
+        font-weight: 500;
+      }
+    }
+  }
+  .storyPill {
+    position: relative;
+    min-height: 150px;
+    background-color: #dbbffd;
+    padding: clamp(0.068375rem, 0rem + 2.094vw, 6.8375rem);
+    padding-inline: clamp(0.068375rem, 0rem + 3.094vw, 6.8375rem);
+    border-radius: 1vw;
+    margin-bottom: clamp(0.068375rem, 0rem + 3.094vw, 6.8375rem);
+
+    &:hover {
+    }
+    .storyDetails {
+      width: 100%;
+
+      .storyName {
+        width: 84%;
+        @include mixin.flex-container(row, flex-start, flex-start, 3vw);
+        p {
+          font-size: clamp(0.1953125rem, 0rem + 3.125vw, 19.53125rem);
+          width: 100%;
+          font-weight: 600;
+          padding-left: clamp(0.0390625rem, 0rem + 0.625vw, 3.90625rem);
+          //   color: #392467;
+          margin-bottom: clamp(0.068375rem, 0rem + 2.094vw, 6.8375rem);
+          border-bottom: 0.1vw solid white;
+          // font-size: 4vw; /* Set font size relative to viewport width */
+          white-space: nowrap; /* Prevent text from wrapping */
+          overflow: hidden;
+          text-overflow: ellipsis; /* Show ellipsis for overflow text */
+        }
+      }
+      .storyHygiene,
+      .updatedDate,
+      .updatedDate,
+      .assignedTo {
+        font-size: clamp(0.1755rem, 0rem + 3.408vw, 17.55rem);
+        margin-bottom: clamp(
+          0.0488125rem,
+          6.938893903907228e-18rem + 2.7809999999999999vw,
+          4.88125rem
+        );
+        // color: #341e4d;
+      }
+    }
+    .statusStorypoints {
+      @include mixin.flex-container(column, space-between, center);
+      width: 20%;
+      height: 93%;
+      position: absolute;
+      top: 1.6vw;
+      right: 0vw;
+
+      .storyStatusLabel {
+        width: 80%;
+        text-align: center;
+        font-size: clamp(0.1755rem, 0rem + 3.008vw, 17.55rem);
+        font-weight: 600;
+        padding: 0.5vw 1vw;
+        border: 0.1vw solid #844cbf;
+        // background-color: #5d3587;
+        outline: none;
+        // border: none;
+        color: white;
+        border-radius: 0.4vh;
+        margin-left: clamp(0.0390625rem, 0rem + 1.225vw, 3.90625rem);
+      }
+      .storyPointsInStoryPane {
+        font-size: clamp(0.1755rem, 0rem + 3.08vw, 17.55rem);
+        font-weight: 600;
+        margin-bottom: clamp(
+          0.0488125rem,
+          6.938893903907228e-18rem + 2.7809999999999999vw,
+          4.88125rem
+        );
+        // margin-right: clamp(
+        //   0.0488125rem,
+        //   6.938893903907228e-18rem + 0.7809999999999999vw,
+        //   4.88125rem
+        // );
+        color: #341e4d;
+        background-color: #e6d3fc;
+        padding: 0vw 2vw;
+        border-radius: 1vw;
+        // padding: clamp(0.0390625rem, 0rem + 0.625vw, 3.90625rem);
+      }
+    }
+  }
+}

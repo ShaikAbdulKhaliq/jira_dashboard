@@ -1,0 +1,74 @@
+.course_card {
+    border: 1px solid #ccc;
+    border-radius: clamp(0.0259375rem, 0rem + 0.6167vw, 2.59375rem);
+    padding: clamp(0.0694375rem, 0rem + 1.1111vw, 6.9444375rem);
+    // text-align: center;
+    margin: clamp(0.0259375rem, 0rem + 0.4167vw, 2.59375rem);
+    width: 30%;
+    height: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    .course_image {
+      width: 100%;
+      height:clamp(0.3472375rem, 0rem + 10.7556vw, 34.7224375rem);
+      object-fit: cover;
+      // border: 1px solid;
+      border-radius: clamp(0.0115rem, 0rem + 0.3852vw, 1.15rem);
+    }
+  
+    .deadline {
+      padding: clamp(0.01725rem, 0rem + 0.2778vw, 1.725rem) clamp(0.0259375rem, 0rem + 0.4167vw, 2.59375rem);
+      background-color: #ffc107;
+      border-radius: clamp(0.0115rem, 0rem + 0.2852vw, 1.15rem);
+      color: #fff;
+      font-size: clamp(0.0607625rem, 0rem + 0.9922vw, 6.076375rem);
+      position:absolute;
+      top: clamp(0.1041625rem, 0rem + 1.6667vw, 10.4166875rem);
+      right: clamp(0.11284375rem, 0rem + 1.5056vw, 11.28475rem);
+
+      &.overdue {
+        background-color: #dc3545;
+      }
+    }
+  
+    h3 {
+      margin-top:clamp(0.05208125rem, 0rem + 0.9333vw, 5.2083125rem); 
+      font-size: clamp(0.0868rem, 0rem + 1.3889vw, 8.6805625rem);
+    }
+  
+    .progress_bar {
+      width: 100%;
+      background-color: #e9ecef;
+      border-radius: clamp(0.0115rem, 0rem + 0.2852vw, 1.15rem);
+      overflow: hidden;
+      margin-bottom: clamp(0.0259375rem, 0rem + 0.4167vw, 2.59375rem);
+      justify-content: flex-start;
+      .progress {
+        height: clamp(0.0259375rem, 0rem + 0.6167vw, 2.59375rem);
+        background-color: #007bff;
+        border-radius: clamp(0.0115rem, 0rem + 0.2852vw, 1.15rem);
+      }
+    }
+  
+    p {
+      margin: clamp(0.0259375rem, 0rem + 0.5167vw, 2.59375rem) 0;
+      font-size: clamp(0.07811875rem, 0rem + 1.25vw, 7.8125rem);
+    }
+  
+    button {
+      width: 100%;
+      padding: clamp(0.0259375rem, 0rem + 0.5167vw, 2.59375rem) clamp(0.0694375rem, 0rem + 1.1111vw, 6.9444375rem);
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: clamp(0.0115rem, 0rem + 0.2852vw, 1.15rem);
+      font-size: clamp(0.0694375rem, 0rem + 1.2111vw, 6.9444375rem);
+      cursor: pointer;
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  

@@ -1,0 +1,88 @@
+@mixin flex-container(
+  $direction: row,
+  $justify-content: center,
+  $align-items: center,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+
+//color theme
+// $background: #121212;
+// $surface: #1e1e1e;
+// $primary: #bb86fc;
+// $onPrimary: #000000;
+// $onSurfacePrimary: #d4d4d4;
+// $onSurfaceSecondary: #c1c1c1;
+// $onSurfaceTertiary: #515151;
+// $onBackground: #30373c;
+// $subText:#706c6c;
+$color: #d6b5ff35;
+$color2: #515151;
+
+$background: #050409;
+$surface: #0a0a14;
+$primary: #4291ff;
+$primaryBg: #4291ff11;
+$onPrimary: #000000;
+$onSurfacePrimary: #f6f8fa;
+$onSurfaceSecondary: #9fa1ac;
+$onSurfaceTertiary: #515564;
+$onBackground: #30373c;
+$subText: #191c25;
+$color: #bb86fc6a;
+$color2: #0f0f0f;
+
+$aquaBlue: #34edf6;
+$aquaBlueBg: #34ecf61d;
+$aquaGreen: #48e092;
+$aquaGreenBg: #48e0911d;
+$yellow: #fde036;
+$yellowBg: #fddf3622;
+$red: #c72624;
+$redBg: #c7272439;
+$greyBg: #68758220;
+$grey: #a2afbe;
+
+$lightBackGround: #fafafa;
+$lightSurface: #fff;
+$lightPrimary: #181818;
+$lightAquaBlueBg: #34ecf64e;
+$lightAquaBlue: #07a5ae;
+$lightAquaGreenBg: #48e0914c;
+$lightAquaGreen: #00a550;
+$lightYellowBg: #fddf364c;
+$lightYellow: #9b8506;
+$lightGreyBg: #68758218;
+$lightGrey: #5d6268;
+$lightScrollBar: #9f9f9f;
+$lightRedBg: #ff5b5829;
+$lightRed: #e82b28;
+$greenBg: #05c6051a;
+$green: #0dac0d !important;
+
+#selected {
+  background-color: #bb86fc1f;
+  color: $primary;
+  box-shadow: 0px 2px 5px 0px #d6d6d6;
+}
+.active {
+  background-color: #05c6051a;
+  color: #0dac0d !important;
+}
+.closed {
+  background-color: #0080ff20;
+  color: #007bff;
+  background-color: #68758220;
+  color: #a2afbe;
+  background-color: #c59d3044;
+  color: #c59d30;
+  background-color: #c41c1c1c;
+  color: #ff0707;
+  background-color: #e6601338;
+  color: #ff5e01;
+}

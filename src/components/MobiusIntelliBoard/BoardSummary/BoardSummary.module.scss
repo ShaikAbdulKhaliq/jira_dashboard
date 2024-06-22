@@ -1,0 +1,908 @@
+@use "../../../mixin.module.scss";
+@import "../../../mixin.module.scss";
+
+#lightMode {
+  background-color: $lightBackGround;
+  * {
+    &::-webkit-scrollbar-thumb {
+      background: $lightScrollBar;
+      border-radius: 6px;
+      width: 0.1rem;
+    }
+    // transition: ease-in-out 200ms;
+  }
+      .breadCrumbs {
+      background-color: $lightBackGround;
+      .container {
+        background-color: $lightBackGround;
+        color: $lightPrimary;
+        font-weight: 500;
+        span {
+          p {
+            color: $lightPrimary;
+          }
+        }
+        .boardSelect {
+          .selectContainer {
+            background-color: $lightBackGround;
+            border: 0.1rem solid #ffffff;
+            box-shadow: 0px 2px 5px 0px #d6d6d6;
+            input {
+              background-color: $lightGreyBg;
+              color: $lightGrey;
+            }
+            > p {
+              border-radius: 0.1rem;
+              background-color: transparent;
+              color: $primary;
+              right: 0.35rem;
+              top: 0.4rem;
+            }
+            .list {
+              width: 100%;
+              height: 100%;
+              overflow: scroll;
+              font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+              padding-inline: clamp(
+                0.2225rem,
+                0.0003rem + 0.2777vw,
+                0.666875rem
+              );
+              @include mixin.flex-container(
+                column,
+                flex-start,
+                flex-start,
+                0.2rem
+              );
+              > div {
+                margin-top: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+                width: 100%;
+                padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+                border-radius: 0.2rem;
+                color: $onSurfaceSecondary;
+                // background-color: #dbdbdb1f !important;
+                background-color: transparent;
+                // border-bottom: .1rem solid #d8d6d61f;
+                &:hover {
+                  background-color: $aquaBlueBg !important;
+                  color: $lightAquaBlue;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+          .hideSelect {
+            // visibility: visible;
+            // display: none;
+            opacity: 0;
+            min-height: 0px;
+            max-height: 0px;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            border: none;
+          }
+        }
+      }
+      .rightHeader {
+        > div {
+          color: $lightPrimary !important;
+          // background-color: $primaryBg;
+          // @include mixin.flex-container(row, flex-start, center, 0.5rem);
+          // background: linear-gradient(to right, $primaryBg, $background);
+          // color: $primary;
+          // border-top-left-radius: 1rem;
+          // border-bottom-left-radius: 1rem;
+          // padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+          // padding-right: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+        }
+      }
+    }
+  .mainContent {
+    
+    .left {
+      .top {
+        .sprintContainer,
+        .membersContainer {
+          background-color: $lightSurface;
+          box-shadow: 0px 2px 5px 0px #d6d6d6;
+          .header {
+            > span {
+              > p {
+                color: $lightPrimary;
+                // font-weight: 600;
+                &:last-child {
+                  color: $primary;
+                }
+              }
+            }
+            color: $lightPrimary;
+          }
+          .status {
+            > div {
+              background-color: $primaryBg;
+              color: $primary;
+              p {
+                &:last-child {
+                  color: $primary;
+                }
+              }
+              .rockstar_toolTip {
+                border: 0.1rem solid $greyBg;
+                background-color: $lightSurface;
+                box-shadow: 0px 2px 10px 0px #f4f4f4;
+                color: $onSurfaceSecondary;
+              }
+              #hideToolTip {
+                display: none;
+              }
+            }
+            span {
+              // font-weight: 600;
+              &:first-child {
+                background-color: $aquaGreenBg;
+                color: $lightAquaGreen;
+              }
+              &:nth-child(2) {
+                background-color: $lightYellowBg;
+                color: $lightYellow;
+              }
+              &:last-child {
+                background-color: $lightGreyBg;
+                color: $lightGrey;
+              }
+            }
+          }
+          .tagsContainer {
+            .tags {
+              // background-color: $yellowBg;
+              // transition: ease-in-out 10ms;
+              color: $lightGrey;
+              // font-weight: 600;
+              &:hover {
+                scale: 1.05;
+                background-color: $primaryBg;
+                color: $primary;
+                box-shadow: 0px 2px 5px 0px #d6d6d6;
+
+                // box-shadow: 0px 6px 10px 0px rgb(27, 28, 39);
+              }
+            }
+            .membersTags {
+              overflow: visible !important;
+            }
+
+            #selected {
+              background-color: $lightYellowBg;
+              color: $lightYellow;
+              box-shadow: 0px 2px 5px 0px #d6d6d6;
+
+              // box-shadow: 0px 6px 10px 0px rgb(23, 22, 22);
+            }
+            .active {
+              background-color: $aquaGreenBg;
+              color: $lightAquaGreen !important;
+            }
+            .closed {
+              // background-color: #0080ff20;
+              // color: #007bff;
+              background-color: $lightGreyBg;
+              color: $lightGrey;
+            }
+          }
+        }
+      }
+      .bottom {
+        .StoriesHeading {
+          span {
+            background-color: $lightSurface;
+            color: $lightPrimary;
+            // font-weight: 600;
+            padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            border-radius: 0.2rem;
+            box-shadow: 0px 2px 5px 0px #d6d6d6;
+          }
+          .memberFilter {
+            background-color: $aquaBlueBg;
+            color: $primary;
+            box-shadow: 0px 2px 5px 0px #d6d6d6;
+
+            // font-weight: 600;
+          }
+        }
+      }
+    }
+    .right {
+      background-color: $lightBackGround;
+      .rightHeader {
+        > div {
+          background: linear-gradient(to right, $primaryBg, $lightBackGround);
+          color: $primary;
+          border-top-left-radius: 1rem;
+          border-bottom-left-radius: 1rem;
+          padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+          padding-right: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+          > img {
+            width: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+          }
+        }
+        span {
+          margin-right: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+          img {
+            width: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+            // transition: ease-in-out 300ms;
+            padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+            background-color: $lightBackGround;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          #selected {
+            background-color: $primaryBg;
+            border-bottom: 0.1vw solid $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainContainer {
+  // * {
+  //   transition: ease-in-out 100ms;
+  // }
+  width: 100%;
+  height: 95vh;
+  background-color: $background;
+  // overflow: scroll;
+  @include mixin.flex-container(column, flex-start, flex-start);
+  @media only screen and (max-width: 768px) {
+    @include mixin.flex-container(column, flex-start, flex-start);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+  }
+    .breadCrumbs {
+      width: 100%;
+      max-height: 7vh;
+      min-height: 7vh;
+      padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+      padding-inline: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      padding-inline: 1.2vw;
+      background-color: $background;
+      .container {
+        width: fit-content;
+        @include mixin.flex-container(row, flex-start, flex-start);
+        border-radius: 0.2rem;
+        background-color: $background;
+        //   background-color: #bb86fc1f;
+        color: white;
+        span {
+          @media only screen and (max-width: 768px) {
+            font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            padding-inline: 0;
+          }
+          @media screen and (min-width: 768px) and (max-width: 1024px) {
+          }
+          @media screen and (min-width: 1024px) and (max-width: 4000px) {
+            padding-inline: 0.8vw;
+          }
+          width: fit-content;
+          height: 4vh;
+          padding-inline: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+          @include mixin.flex-container(row, flex-start, center, 0.2rem);
+          border-radius: 0.2rem;
+          font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+          p {
+            color: $primary;
+          }
+
+          img {
+            @media only screen and (max-width: 768px) {
+              width: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+              height: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+            }
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+            }
+            width: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+            height: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+          }
+        }
+
+        .sprintBreadcrumb {
+          @media only screen and (max-width: 768px) {
+            max-width: 70px;
+          }
+          @media screen and (min-width: 768px) and (max-width: 1024px) {
+            max-width: 100px;
+          }
+        }
+        .boardSelect {
+          @media only screen and (max-width: 768px) {
+            width: 80px;
+            overflow: visible;
+          }
+          width: 14vw;
+          height: 100%;
+          @include mixin.flex-container(column, flex-start, center);
+          cursor: pointer;
+          > span {
+            width: 100%;
+            gap: 0.5rem;
+            img {
+              &:last-child {
+                width: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                height: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                cursor: pointer;
+              }
+            }
+            p {
+              width: 100%;
+              &:hover {
+                color: $primary;
+              }
+            }
+          }
+          .selectContainer {
+            @media only screen and (max-width: 768px) {
+              width: 150px;
+            }
+            position: relative;
+            transition: all ease-in-out 0.1s;
+            opacity: 1;
+            width: 100%;
+            min-height: 4px;
+            max-height: 180px;
+            background-color: $surface;
+            border: 0.1rem solid $background;
+            box-shadow: 0px 6px 25px 0px #000000;
+            z-index: 2;
+            padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+            @include mixin.flex-container(column, flex-start, center, 0.2rem);
+            border-radius: 0.2rem;
+            input {
+              width: 100%;
+              min-height: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+              padding-inline: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+              background-color: $background;
+              outline: none;
+              border: none;
+              border-radius: 0.2rem;
+              font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+              // color: #949090;
+              color: $primary;
+            }
+            > img {
+              position: absolute;
+              width: clamp(1rem, 0rem + 1.25vw, 3rem);
+              left: 0.5rem;
+              top: 0.45rem;
+              transform: scaleX(-1);
+            }
+            > p {
+              @include mixin.flex-container(column, center, center);
+              width: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+              height: clamp(1.25rem, 0rem + 1.5625vw, 3.75rem);
+              position: absolute;
+              border-radius: 0.2rem;
+              background-color: $aquaBlueBg;
+              font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+              color: $aquaBlue;
+              right: 0.35rem;
+              top: 0.4rem;
+            }
+            .list {
+              width: 100%;
+              height: 100%;
+              overflow: scroll;
+              font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+              padding-inline: clamp(
+                0.2225rem,
+                0.0003rem + 0.2777vw,
+                0.666875rem
+              );
+              @include mixin.flex-container(
+                column,
+                flex-start,
+                flex-start,
+                0.2rem
+              );
+              > div {
+                width: 100%;
+                margin-top: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+                padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+                border-radius: 0.2rem;
+                color: $onSurfaceSecondary;
+                // border-bottom: .1rem solid transparent;
+                &:hover {
+                  background-color: $aquaGreenBg;
+                  color: $aquaBlue;
+                }
+
+                // &:nth-child(even) {
+                //   background-color: #5150531f;
+                //   &:hover {
+                //     background-color: #bb86fc1f;
+                //     color: $primary;
+                //     cursor: pointer;
+                //   }
+                // }
+                // &:nth-child(odd) {
+                //   // background-color: #5352551f;
+                //   &:hover {
+                //     background-color: #0080ff20;
+                //     color: #007bff;
+                //     cursor: pointer;
+                //   }
+                // }
+              }
+            }
+          }
+          .hideSelect {
+            // visibility: visible;
+            // display: none;
+            opacity: 0;
+            min-height: 0px;
+            max-height: 0px;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            border: none;
+          }
+        }
+      }
+      .rightHeader {
+        width: fit-content;
+        height: 4vh;
+        @include mixin.flex-container(row, flex-start, center);
+        > img {
+          width: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+          height: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+        }
+        > div {
+          // height: 100%;
+          font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+          padding: 0.2rem 0.6rem;
+          border-radius: 0.2rem;
+          color: $primary !important;
+          // background-color: $primaryBg;
+          // @include mixin.flex-container(row, flex-start, center, 0.5rem);
+          // background: linear-gradient(to right, $primaryBg, $background);
+          // color: $primary;
+          // border-top-left-radius: 1rem;
+          // border-bottom-left-radius: 1rem;
+          // padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+          // padding-right: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+          > img {
+            width: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+          }
+        }
+      }
+    }
+  .mainContent {
+    @media only screen and (max-width: 768px) {
+      @include mixin.flex-container(column, flex-start, flex-start, 1rem);
+    }
+    @media screen and (min-width: 1024px) and (max-width: 4000px) {
+      // padding-inline: 2vw;
+    }
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    @include mixin.flex-container(row, flex-start, flex-start);
+    .left {
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+        height: 100vh;
+        @include mixin.flex-container(column, flex-start, flex-start, 1rem);
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        gap: 1.5rem;
+      }
+      width: 50%;
+      height: 100%;
+      @include mixin.flex-container(column, flex-start, flex-start, 1rem);
+      padding: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      padding-top: 0;
+      .top {
+        width: 100%;
+        min-height: 42%;
+        @include mixin.flex-container(column, flex-start, flex-start, 0.5vw);
+        @media only screen and (max-width: 768px) {
+          @include mixin.flex-container(column, flex-start, flex-start, 2vw);
+          min-height: 42vh;
+        }
+        .sprintContainer,
+        .membersContainer {
+          @media only screen and (max-width: 768px) {
+            border-radius: 1vw;
+            gap: 0.7rem;
+            min-height: 50%;
+          }
+          width: 100%;
+          min-height: 50%;
+
+          padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+          overflow: visible;
+          background-color: $surface;
+          border-radius: 0.4vw;
+          @include mixin.flex-container(column, space-between, flex-start);
+
+          .header {
+            width: 100%;
+            @media only screen and (max-width: 768px) {
+              // flex-wrap: wrap;
+            }
+            @include mixin.flex-container(row, space-between, center, 0.2rem);
+            > span {
+              @media only screen and (max-width: 768px) {
+                width: 100%;
+                font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem) !important;
+              }
+              width: 60%;
+              @include mixin.flex-container(row, flex-start, center, 0.2rem);
+              > p {
+                color: $onSurfacePrimary;
+                font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+                font-weight: 500;
+                letter-spacing: 0.1vw;
+                @media only screen and (max-width: 768px) {
+                  font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+                }
+                &:first-child {
+                  max-width: 60%;
+                  white-space: nowrap; /* Prevent text from wrapping */
+                  overflow: hidden;
+                  text-overflow: ellipsis; /* Show ellipsis for overflow text */
+                }
+                &:last-child {
+                  @media only screen and (max-width: 768px) {
+                    width: min-content;
+                    height: min-content;
+                    padding: 0.1rem 0.2rem;
+                    font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+                  }
+                  width: fit-content;
+                  height: 1rem;
+                  font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                  @include mixin.flex-container(row, center, center);
+                  border-radius: 0.2rem;
+                  padding: 0.3rem;
+                  // padding: 0.1rem 0.35rem;
+                  // background-color: $primaryBg;
+                  // box-shadow: 4px 2px 10px 2px #171616;
+                  color: $primary;
+                }
+              }
+            }
+            .status {
+              @include mixin.flex-container(row, flex-start, center, 0.5rem);
+              @media only screen and (max-width: 768px) {
+                @include mixin.flex-container(
+                  row,
+                  flex-start,
+                  flex-end,
+                  0.2rem
+                );
+              }
+              > div {
+                @media only screen and (max-width: 768px) {
+                  border-radius: 0.15rem;
+                }
+                // margin-right: clamp(2rem, 0rem + 2.5vw, 6rem);
+                @include mixin.flex-container(row, flex-start, center, 0.2rem);
+                // box-shadow: 0px 6px 10px 0px rgb(23, 22, 22);
+                padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+                padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+                border-radius: 0.2rem;
+                // background-color: #68758220;
+                background-color: $primaryBg;
+                // box-shadow: 0px 6px 10px 0px rgb(23, 22, 22);
+                cursor: pointer;
+                position: relative;
+                > p {
+                  &:first-child {
+                    @media only screen and (max-width: 768px) {
+                      width: 0.25rem;
+                      height: 0.25rem;
+                    }
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    border-radius: 100%;
+                    background-color: #007bff;
+                  }
+                  &:nth-child(2) {
+                    @media only screen and (max-width: 768px) {
+                      font-size: clamp(
+                        0.2225rem,
+                        0.0003rem + 1.977vw,
+                        0.666875rem
+                      );
+                    }
+                    color: #007bff;
+                    // color: #a2afbe;
+                    // border-bottom: 0.1vw solid #007bff;
+                    padding-inline: clamp(
+                      0.11125rem,
+                      0rem + 0.1391vw,
+                      0.33375rem
+                    );
+                    font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+                  }
+                }
+
+                .rockstar_toolTip{
+                  @media only screen and (max-width: 768px) {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1rem;
+                  }
+                  display: block;
+                  border: 0.1rem solid $onBackground;
+                  z-index: 3;
+                  position: absolute;
+                  top: -6em;
+                  right:-4rem;
+                  // right: 9.6rem;
+                  background-color: $surface;
+                  box-shadow: 0px 6px 15px 5px rgb(0, 0, 0);
+                  border-radius: 0.8rem;
+                  padding: 0.4rem 0.4rem;
+                  width: 15vw;
+                  padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+                  font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                  color: $onSurfaceSecondary;
+                }
+                #hideToolTip {
+                  display: none;
+                }
+                
+              }
+
+              span {
+                @media only screen and (max-width: 768px) {
+                  border-radius: 0.15rem;
+                  font-size: clamp(0.5rem, 0rem + 0.325vw, 1.5rem);
+                  padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+                  padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+                }
+                font-size: clamp(0.61125rem, 0rem + 0.7641vw, 1.83375rem);
+                padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+                padding-bottom: 0.2rem;
+                padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+                border-radius: 0.2vw;
+                // box-shadow: 0px 6px 10px 0px rgb(23, 22, 22);
+                &:first-child {
+                  background-color: $aquaGreenBg;
+                  color: $aquaGreen;
+                }
+                &:nth-child(2) {
+                  background-color: $aquaBlueBg;
+                  color: $aquaBlue;
+                }
+                &:last-child {
+                  background-color: $greyBg;
+                  color: $grey;
+                }
+              }
+            }
+          }
+          .tagsContainer {
+            @media only screen and (max-width: 768px) {
+              height: 12vh;
+              gap: 0.6rem;
+            }
+            width: 100%;
+            height: 75%;
+            position: relative;
+            overflow: scroll;
+            @include mixin.flex-container(row, flex-start, flex-start, 1vw);
+            flex-wrap: wrap;
+            padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+            .errorContainer {
+              width: 100%;
+              height: 100%;
+              @include mixin.flex-container(column, flex-start, center, 0.3rem);
+              color: $onSurfaceTertiary;
+              font-size: 0.7em;
+              > img {
+                width: 30px;
+              }
+            }
+
+            .tags {
+              @media only screen and (max-width: 768px) {
+                font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+                max-width: 6rem;
+                white-space: nowrap; /* Prevent text from wrapping */
+                overflow: hidden;
+                text-overflow: ellipsis; /* Show ellipsis for overflow text */
+              }
+              position: relative;
+              width: auto;
+              height: fit-content;
+              cursor: pointer;
+              font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+              border-radius: 0.2rem;
+              padding: 0.25rem 0.5rem;
+              background-color: $background;
+              color: $onSurfaceSecondary;
+              font-weight: 500;
+              transition: ease-in-out 100ms;
+              background-color: #68758220;
+              color: #a2afbe;
+              &:hover {
+                scale: 1.05;
+                background-color: $primaryBg;
+                color: $primary;
+                // box-shadow: 0px 6px 10px 0px rgb(27, 28, 39);
+              }
+
+              span {
+                position: absolute;
+                width: 0.3rem;
+                height: 0.3rem;
+                border-radius: 100%;
+                background-color: #007bff;
+                top: -0rem;
+                right: -0.1rem;
+              }
+            }
+            .membersTags {
+              overflow: visible !important;
+            }
+
+            #selected {
+              background-color: $aquaBlueBg;
+              color: $aquaBlue;
+              box-shadow: none;
+            }
+            .active {
+              background-color: $aquaGreenBg;
+              color: $aquaGreen !important;
+            }
+            .closed {
+              // background-color: #0080ff20;
+              // color: #007bff;
+              background-color: #68758220;
+              color: #a2afbe;
+            }
+          }
+          #loaderContainer {
+            @include mixin.flex-container(column, center, center);
+          }
+
+          @media only screen and (max-width: 768px) {
+            .member {
+              font-size: clamp(0.13625rem, 0rem + 2.218vw, 13.625rem);
+              border-radius: 1vw;
+            }
+          }
+        }
+      }
+      .bottom {
+        @media only screen and (max-width: 768px) {
+          max-height: 47vh;
+        }
+        width: 100%;
+        min-height: 55%;
+        overflow: hidden;
+        @include mixin.flex-container(column, flex-start, flex-start, 0.4rem);
+        .StoriesHeading {
+          @media only screen and (max-width: 768px) {
+            min-height: 12%;
+          }
+          min-height: fit-content;
+          width: 100%;
+          @include mixin.flex-container(row, flex-start, center, 1vw);
+          span {
+            @media only screen and (max-width: 768px) {
+              width: fit-content;
+            }
+
+            @include mixin.flex-container(row, flex-start, center, 0.5rem);
+            height: clamp(2rem, 0rem + 2vw, 6rem);
+            background-color: $surface;
+            color: $onSurfacePrimary;
+            padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            border-radius: 0.2rem;
+            p {
+              &:last-child {
+                @media only screen and (max-width: 768px) {
+                  width: 1.2rem;
+                  height: 1.2rem;
+                  padding: 0.2rem 0.35rem;
+                  font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                }
+                width: 1.6vw;
+                height: 1.5vw;
+                font-size: clamp(0.7225rem, 0.0003rem + 0.9027vw, 2.166875rem);
+                @include mixin.flex-container(row, center, center, 1vw);
+                border-radius: 100%;
+                // background-color: #bb86fc1f;
+                // box-shadow: 4px 2px 10px 2px #171616;
+                color: $primary;
+              }
+            }
+          }
+          .memberFilter {
+            @include mixin.flex-container(row, center, center, 0.1rem);
+            min-width: 10%;
+            height: fit-content;
+            background-color: $primaryBg;
+            color: $primary;
+            border-radius: 0.2rem;
+            padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+            padding-left: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            font-size: clamp(0.7225rem, 0.0003rem + 0.9027vw, 2.166875rem);
+            svg {
+              width: clamp(1.25rem, 0rem + 1.5625vw, 3.75rem);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+        padding: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      }
+      background-color: $background;
+      width: 50%;
+      height: 100%;
+      @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+      padding: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      padding-left: 0;
+      padding-top: 0;
+      .rightHeader {
+        width: 100%;
+        height: 5%;
+        @include mixin.flex-container(row, space-between, center);
+        // padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+        > div {
+          @include mixin.flex-container(row, flex-start, center, 0.5rem);
+          background: linear-gradient(to right, $primaryBg, $background);
+          color: $primary;
+          border-top-left-radius: 1rem;
+          border-bottom-left-radius: 1rem;
+          padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+          padding-right: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+          > img {
+            width: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+          }
+        }
+        span {
+          margin-right: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+          img {
+            width: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+            // transition: ease-in-out 300ms;
+            padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+            background-color: $primaryBg;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          #selected {
+            background-color: $primaryBg;
+            border-bottom: 0.1vw solid $primary;
+            box-shadow: none;
+          }
+        }
+      }
+      .mainRightContent {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show ellipsis for overflow text */
+}

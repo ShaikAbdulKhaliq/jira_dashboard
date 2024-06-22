@@ -1,0 +1,15 @@
+.courses_in_progress {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 2vw;
+  p {
+    font-size: clamp(0.0694375rem, 0rem + 1.5111vw, 6.9444375rem);
+  }
+  div {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

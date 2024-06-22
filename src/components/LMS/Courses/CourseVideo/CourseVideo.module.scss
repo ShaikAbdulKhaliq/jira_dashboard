@@ -1,0 +1,98 @@
+#lightMode{
+  background-color: white;
+  height: 95vh;
+  width: 100%;
+}
+
+.course_viewer {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    padding: clamp(0.0868rem, 0rem + 1.4889vw, 8.6805625rem);
+    // border: 1px solid ;
+    .sidebar {
+      width: 16.41%;
+      border-right: 1px solid #ccc;
+      padding-right: clamp(0.0868rem, 0rem + 1.4889vw, 8.6805625rem);
+      h3{
+        font-size: clamp(0.1041625rem, 0rem + 1.6667vw, 10.4166875rem);
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.01725rem, 0rem + 0.5578vw, 1.725rem);
+        li {
+          font-size: clamp(0.0694375rem, 0rem + 1.2111vw, 6.9444375rem);
+          padding: clamp(0.034625rem, 0rem + 0.6556vw, 3.4625rem);
+          cursor: pointer;
+          border: 1px solid #ccc;
+          text-align: center;
+          &:hover {
+            background: #e0e0e0;
+          }
+        }
+      }
+    }
+  
+    .content {
+      flex: 1;
+      display: flex;
+  
+      .video_section {
+        flex: 2;
+        padding: clamp(0.0868rem, 0rem + 1.3889vw, 8.6805625rem);
+        border-right: 1px solid #ccc;
+  
+        h2 {
+          font-size: clamp(0.1041625rem, 0rem + 1.7467vw, 10.4166875rem);
+          margin-bottom: clamp(0.034625rem, 0rem + 0.7556vw, 3.4625rem);
+        }
+  
+        video {
+          width: 100%;
+          height: auto;
+          margin-bottom: clamp(0.0868rem, 0rem + 1.3889vw, 8.6805625rem);
+        }
+  
+        p {
+          font-size: clamp(0.0694375rem, 0rem + 1.3111vw, 6.9444375rem);
+        }
+      }
+  
+      .chapters_section {
+        flex: 1;
+        padding: clamp(0.0868rem, 0rem + 1.3889vw, 8.6805625rem);
+  
+        h3 {
+          font-size: clamp(0.0868rem, 0rem + 1.4889vw, 8.6805625rem);
+          margin-bottom: clamp(0.0868rem, 0rem + 1.2889vw, 8.6805625rem);
+        }
+  
+        ul {
+          list-style: none;
+          padding: 0;
+  
+          li {
+            font-size: clamp(0.0694375rem, 0rem + 1.2111vw, 6.9444375rem);
+            padding:clamp(0.034625rem, 0rem + 0.7556vw, 3.4625rem);
+            border: 1px solid #ccc;
+            margin-bottom: clamp(0.01725rem, 0rem + 0.3778vw, 1.725rem);
+            cursor: pointer;
+             text-align: center;
+            &.completed {
+              text-decoration: line-through;
+              pointer-events: none;
+              background: #f0f0f0;
+            }
+  
+            &:hover {
+              background: #e0e0e0;
+            }
+          }
+        }
+      }
+    }
+  }
+  

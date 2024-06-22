@@ -1,0 +1,491 @@
+@use "../../../mixin.module.scss";
+@import "../../../mixin.module.scss";
+.mainContainer {
+  width: 100%;
+  min-height: 95vh;
+  background-color: $background;
+  .headContainer {
+    width: 100%;
+    min-height: 10vh;
+    @include mixin.flex-container(column, flex-start, center);
+    .searchDiv {
+      @media only screen and (max-width: 767px) {
+        @include mixin.flex-container(row, center, center, 0.5rem);
+        padding-inline: clamp(0.0390625rem, 0rem + 1.425vw, 3.90625rem);
+        padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        @include mixin.flex-container(row, center, center, 2vw);
+        padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+      }
+      width: 100%;
+      height: 100%;
+      background-color: $background;
+      padding: clamp(0.0390625rem, 0rem + 0.825vw, 3.90625rem);
+      padding-top: 0.6rem;
+      @include mixin.flex-container(row, flex-start, center, 1vw);
+      > div {
+        height: 100%;
+        position: relative;
+        input {
+          @media only screen and (max-width: 767px) {
+            width: 60vw;
+            // height: 100%;
+            font-size: clamp(0.087875rem, 0rem + 3.406vw, 8.7875rem);
+            // margin-bottom: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+          }
+          @media screen and (min-width: 768px) and (max-width: 1024px) {
+            width: 52.5vw;
+            height: 3.5vw;
+            font-size: clamp(0.087875rem, 0rem + 1.406vw, 8.7875rem);
+          }
+          width: 20vw;
+          background-color: $surface;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.055);
+          border: none;
+          outline: none;
+          font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+          font-weight: 300;
+          border-radius: 0.2rem;
+          padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+          color: $primary;
+          padding-left: 1.9rem;
+          padding-right: 1.5rem;
+          padding-bottom: 0.3rem;
+          transition: 0.3s;
+          &:focus ~ .border {
+            width: 100%;
+          }
+          &::placeholder {
+            color: $onSurfaceTertiary;
+          }
+          transition: 0.3s;
+          &:focus ~ .border {
+            width: 100%;
+          }
+        }
+        .border {
+          @media only screen and (max-width: 767px) {
+            bottom: 0.2rem;
+          }
+          position: absolute;
+          bottom: 0rem;
+          left: 0;
+          width: 0%;
+          height: 0.01rem;
+          background-color: $primary;
+          transition: ease-in-out 200ms;
+        }
+
+        .search {
+          @media only screen and (max-width: 767px) {
+            bottom: 0.2rem;
+          }
+          position: absolute;
+          transform: scaleX(-1);
+          left: 0.2rem;
+          bottom: 0.3rem;
+          width: clamp(1.25rem, 0rem + 1.5625vw, 3.75rem);
+          margin-top: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+        }
+        .cross {
+          position: absolute;
+          right: -0.1rem;
+          bottom: 0.05rem;
+          cursor: pointer;
+          width: clamp(2rem, 0rem + 2.2vw, 6rem);
+          border-radius: 100%;
+          &:hover {
+            background-color: #0e0e0e32;
+          }
+        }
+      }
+
+      .btnPrimary {
+        @media only screen and (max-width: 767px) {
+          font-size: clamp(0.1171875rem, 0rem + 2.475vw, 11.71875rem);
+          padding: 0.3rem 0.4rem;
+          border-radius: 0.6vw;
+          margin-top: 0.15rem;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          font-size: clamp(0.1755rem, 0rem + 1.408vw, 17.55rem);
+          padding: 0.5vw 2vw;
+        }
+        font-size: clamp(
+          0.0488125rem,
+          6.938893903907228e-18rem + 0.7809999999999999vw,
+          4.88125rem
+        );
+        background-color: $primary;
+        outline: none;
+        border: none;
+        color: $onPrimary;
+        border-radius: 0.2vw;
+        padding: 0.4vw 0.6vw;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          box-shadow: 7px 5px 56px -10px #bb86fc;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    .boardsHeader,
+    .favHeader {
+      @include mixin.flex-container(row, space-between, flex-start);
+      width: 100%;
+      @media only screen and (max-width: 767px) {
+        font-size: clamp(0.15625rem, 0rem + 2.9vw, 15.625rem);
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        font-size: clamp(0.1953125rem, 0rem + 2.125vw, 19.53125rem);
+      }
+      padding: clamp(0.078125rem, 0rem + 1.05vw, 7.8125rem);
+      font-size: clamp(0.068375rem, 0rem + 1.094vw, 6.8375rem);
+      font-weight: 600;
+      background-color: $surface;
+      color: $onSurfacePrimary;
+      // > p {
+      // }
+    }
+  }
+
+  .boardsContainer {
+    background-color: $background;
+    margin-bottom: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+    margin-top: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+    margin-bottom: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+    @media only screen and (max-width: 767px) {
+      height: 40vh;
+      // height: 80vh;
+      // padding: clamp(0.0390625rem, 0rem + 2.825vw, 3.90625rem);
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      // height: 38vh;
+      // height: 80vh;
+      height: 40vh;
+      @include mixin.flex-container(row, center, center, 1.3vw);
+      flex-wrap: wrap;
+      overflow: scroll;
+    }
+    width: 100%;
+    // height: 36.5vh;
+    // height: 78vh;
+    height: 40vh;
+    overflow: scroll;
+    @include mixin.flex-container(row, flex-start, flex-start, 1.3vw);
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-inline: clamp(0.1171875rem, 1.171875rem + 2.875vw, 11.71875rem);
+
+    .boardCard {
+      @media only screen and (max-width: 767px) {
+        width: 90%;
+        height: 15vw;
+        position: relative;
+        @include mixin.flex-container(column, center, center, 1vw);
+        padding: clamp(0.0390625rem, 0rem + 1.925vw, 3.90625rem);
+        margin-inline: auto;
+        // margin-right: clamp(0.0390625rem, 0rem + 0.625vw, 3.90625rem);
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        width: calc(95% / 3);
+        height: 15vw;
+        padding: 1vw 2vw;
+      }
+      z-index: 1;
+      &.expanded {
+        z-index: 2;
+      }
+      width: 14vw;
+      height: 5vw;
+      position: relative;
+      @include mixin.flex-container(column, center, center);
+      padding: clamp(0.0390625rem, 0rem + 0.425vw, 3.90625rem);
+      border-radius: 0.4vw;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: $surface;
+      transition: transform 0.2s;
+      transition: background 0.1s;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        > p {
+          color: $primary;
+        }
+      }
+      > div {
+        width: 100%;
+        position: absolute;
+        top: 0.2rem;
+        right: 0.2rem;
+        @include mixin.flex-container(row, flex-end, center);
+        span {
+          @include mixin.flex-container(row, center, center, 0.1rem);
+          padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+          font-size: clamp(0.087875rem, 0rem + 1.006vw, 8.7875rem);
+          @media only screen and (max-width: 767px) {
+            font-size: clamp(0.087875rem, 0rem + 3.406vw, 8.7875rem);
+          }
+          @media screen and (min-width: 768px) and (max-width: 1024px) {
+            font-size: clamp(0.1171875rem, 0rem + 2.475vw, 11.71875rem);
+          }
+          > img {
+            @media only screen and (max-width: 767px) {
+              width: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+            }
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+              width: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+            }
+            width: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+            margin-bottom: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+          }
+        }
+      }
+      > p {
+        @media only screen and (max-width: 767px) {
+          font-size: clamp(0.1171875rem, 0rem + 2.975vw, 11.71875rem);
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          font-size: clamp(0.1953125rem, 0rem + 2.125vw, 19.53125rem);
+        }
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        font-size: clamp(0.05859375rem, 0rem + 0.9375vw, 5.859375rem);
+        color: $onSurfaceSecondary;
+        font-weight: 400;
+      }
+      .piechart {
+        position: absolute;
+        top: 1.6vw;
+        right: 0.2vw;
+        background-color: #fff;
+        border: 0.1vw solid #6e367b;
+        border-radius: 0.4vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: clamp(0.0390625rem, 0rem + 0.625vw, 3.90625rem);
+        z-index: 3;
+        width: 10vw;
+        height: 10vw;
+        @media only screen and (max-width: 768px) {
+          width: 80vw;
+          height: 40vw;
+          top: 10vw;
+          right: 2.5%;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          width: 20vw;
+          height: 16vw;
+          top: 4vw;
+          right: 0.4vw;
+        }
+
+        // @media screen and (min-width: 1024px) {
+        //   width: 700px;
+        //   height: 500px;
+        // }
+      }
+    }
+  }
+
+  .favHeader {
+    @media only screen and (max-width: 767px) {
+      padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+    }
+    margin-bottom: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+    @include mixin.flex-container(row, space-between, center);
+    > p {
+      @media only screen and (max-width: 767px) {
+        font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        font-size: clamp(0.1953125rem, 0rem + 2.125vw, 19.53125rem);
+      }
+      color: $onSurfacePrimary;
+      font-size: clamp(1rem, 0rem + 1.05vw, 3rem);
+    }
+    span {
+      img {
+        padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+        width: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+        height: clamp(1.5rem, 0rem + 1.875vw, 4.5rem);
+        background-color: rgb(27, 27, 27);
+        cursor: pointer;
+      }
+      .selected {
+        background-color: #bb86fc1f;
+        border-bottom: 0.1vw solid $primary;
+      }
+    }
+
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+    // padding: clamp(
+    //   0.0488125rem,
+    //   6.938893903907228e-18rem + 1.7809999999999999vw,
+    //   4.88125rem
+    // );
+    font-size: clamp(0.068375rem, 0rem + 1.094vw, 6.8375rem);
+    font-weight: 600;
+    background-color: $surface;
+    color: $onSurfacePrimary;
+  }
+
+  .summary_chart {
+    @media only screen and (max-width: 767px) {
+      padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+      @include mixin.flex-container(row, space-evenly, center, 0.5rem);
+      padding-top: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+    }
+    @include mixin.flex-container(row, center, center, 1.5rem);
+    flex-wrap: wrap;
+    width: 100%;
+    height: 30vh;
+    padding-inline: 3%;
+    overflow: scroll;
+    padding: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+    // overflow-x: none;
+
+    p {
+      text-align: center;
+      font-weight: 500;
+      color: $onSurfaceSecondary;
+      width: 100%;
+    }
+    > div {
+      @media only screen and (max-width: 767px) {
+        width: calc(100% / 2.2);
+        border-radius: 0.2rem;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+      }
+      padding: 1%;
+      border-radius: 1rem;
+      width: calc(100% / 5);
+      height: 25vh;
+      background-color: $surface;
+      cursor: pointer;
+    }
+  }
+
+  .favContainer {
+    width: 100%;
+    height: 30vh;
+    background-color: $background;
+    padding-left: clamp(0.087875rem, 0rem + 4.306vw, 8.7875rem);
+    @include mixin.flex-container(row, flex-start, center, 1.3vw);
+    overflow: scroll;
+    @media only screen and (min-width: 1024px) {
+      flex-wrap: wrap;
+    }
+    @media only screen and (max-width: 767px) {
+      @include mixin.flex-container(column, flex-start, center, 3vw);
+      height: 35vh;
+      overflow: scroll;
+      flex-wrap: none;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      @include mixin.flex-container(row, center, center, 1.3vw);
+      flex-wrap: wrap;
+      overflow: scroll;
+      height: 33vh;
+      padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+    }
+    .favCard {
+      @media only screen and (max-width: 767px) {
+        width: 90%;
+        min-height: 15vw;
+        @include mixin.flex-container(column, center, center, 1vw);
+        padding: clamp(0.0390625rem, 0rem + 1.925vw, 3.90625rem);
+        // margin-inline: auto;
+        margin-right: clamp(0.087875rem, 0rem + 3.406vw, 8.7875rem);
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        width: calc(86% / 3);
+        @include mixin.flex-container(column, center, center, 2vw);
+        height: 15vw;
+        padding: 1vw 2vw;
+      }
+      @media only screen and (min-width: 1024px) {
+        max-width: 14vw;
+      }
+      min-width: 14vw;
+      height: 5vw;
+      position: relative;
+      @include mixin.flex-container(column, center, center);
+      padding: clamp(0.0390625rem, 0rem + 0.825vw, 3.90625rem);
+      border-radius: 0.4vw;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: $surface;
+      transition: transform 0.2s;
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+        > p {
+          color: $primary;
+        }
+      }
+      span {
+        position: absolute;
+        right: 0.8vw;
+        top: 0.5vw;
+        font-size: clamp(0.087875rem, 0rem + 1.006vw, 8.7875rem);
+        @media only screen and (max-width: 767px) {
+          font-size: clamp(0.087875rem, 0rem + 2.406vw, 8.7875rem);
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          font-size: clamp(0.1953125rem, 0rem + 2.125vw, 19.53125rem);
+        }
+      }
+
+      > p {
+        @media only screen and (max-width: 767px) {
+          font-size: clamp(0.1171875rem, 0rem + 2.975vw, 11.71875rem);
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          font-size: clamp(0.1953125rem, 0rem + 2.125vw, 19.53125rem);
+        }
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        font-size: clamp(0.05859375rem, 0rem + 0.8375vw, 5.859375rem);
+        color: $onSurfaceSecondary;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.close {
+  @media only screen and (max-width: 768px) {
+    padding-inline: 5vw;
+    border-radius: 6px;
+  }
+  outline: none;
+  border: none;
+  border-radius: 0.4vw;
+  background-color: #5d3587;
+  color: white;
+  padding: clamp(0.0390625rem, 0rem + 0.325vw, 3.90625rem);
+  padding-inline: clamp(
+    0.0488125rem,
+    6.938893903907228e-18rem + 0.7809999999999999vw,
+    4.88125rem
+  );
+  font-size: clamp(0.1171875rem, 1.171875rem + 0.275vw, 11.71875rem);
+}
+
+.loader_cont {
+  width: 100%;
+  height: 30vh;
+  // height: 5%;
+  @include mixin.flex-container(column, center, center);
+}

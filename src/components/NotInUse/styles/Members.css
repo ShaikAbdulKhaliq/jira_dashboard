@@ -1,0 +1,20 @@
+.members-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  overflow: auto;
+}
+
+.member {
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 0.75rem;
+  height: fit-content;
+  /* border: 1px solid #ccc; */
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #36b37e;
+  color: white;
+}
+

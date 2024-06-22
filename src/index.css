@@ -1,0 +1,262 @@
+@import url(https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:200,300,regular,500,600,700,800,200italic,300italic,italic,500italic,600italic,700italic,800italic);
+* {
+  font-family: plus jakarta sans;
+  margin: 0;
+  padding: 0;
+  letter-spacing: .9px;
+}
+
+/* @mixin flex-container(
+  $direction: row,
+  $justify-content: center,
+  $align-items: center,
+  $gap: 0
+) {
+  display: flex;@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+} */
+
+body {
+  background-color: #354a5f;
+}
+
+.custom-navbar {
+  box-sizing: border-box;
+  background-color: #ec53b0;
+  /* background-color: #9d44c0; */
+  /* background-color: #252f5c; */
+  background-color: #d6cca0;
+  background-color: #061621;
+  height: 10vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sprint-select-container {
+  box-sizing: border-box;
+  display: flex;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sprint-select-container #selector {
+  box-sizing: border-box;
+  display: flex;
+  gap: 1rem;
+}
+
+.sprint-option {
+  width: 100px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 50px;
+}
+
+.sprint-select-container button {
+  justify-self: flex-end;
+}
+
+.project-name {
+  font-size: 1rem;
+  color: white;
+  box-sizing: border-box;
+  display: flex;
+  gap: 1rem;
+}
+
+.project-name span {
+  font-size: 0.75rem;
+  /* opacity: 0.75; */
+}
+
+.dashboard-name {
+  font-size: 1.4em;
+  /* opacity: 0.75; */
+  color: white;
+  text-align: center;
+}
+
+.total_story_points {
+  font-size: 1.1em;
+  color: white;
+}
+
+main {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+  height: 90vh;
+}
+
+.sprint-name {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+  font-size: 0.9rem;
+  font-weight: bold;
+  opacity: 0.75;
+  background-color: #9d44c0;
+  color: white;
+  font-style: italic;
+}
+
+#right-pane {
+  box-sizing: border-box;
+  width: 70% !important;
+  overflow: auto;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  /* row-gap: 1rem; */
+  /* color: white; */
+}
+
+#right-pane .header {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+input[type="radio"]:hover {
+  cursor: pointer;
+}
+
+.grid-item {
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* Sprint progress */
+.grid-item-1 {
+  grid-column-start: 1;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 8;
+}
+
+/* Subtasks status */
+.grid-item-2 {
+  grid-column-start: 9;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 8;
+}
+
+/* Story AC Hygiene */
+.grid-item-3 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 8;
+  grid-row-end: 10;
+}
+
+/* Effort Estimate */
+.grid-item-4 {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 8;
+  grid-row-end: 10;
+}
+
+/* Peer review info */
+.grid-item-5 {
+  grid-column-start: 6;
+  grid-column-end: 9;
+  grid-row-start: 8;
+  grid-row-end: 10;
+}
+
+/* On-Time Predictability */
+.grid-item-6 {
+  grid-column-start: 9;
+  grid-column-end: 13;
+  grid-row-start: 8;
+  grid-row-end: 13;
+}
+
+/* Time log info */
+.grid-item-7 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 10;
+  grid-row-end: 13;
+}
+
+/* Members */
+.grid-item-8 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 10;
+  grid-row-end: 13;
+}
+
+.right-pane-1 {
+  box-sizing: border-box;
+  width: 40% !important;
+  overflow: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.h_chart_div {
+  background-color: #fff;
+  height: 35%;
+}
+
+.pie-chart-div {
+  background-color: #fff;
+  height: 100%;
+  width: 35%;
+}
+
+.story-sprint-details-div {
+  height: 32%;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.sprint-members-div {
+  background-color: #fff;
+  width: 65%;
+  height: 100%;
+}
+
+.hygine-ontime-timelog-div {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.hygine-ontime-div {
+  gap: 0.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.time-log-div {
+  gap: 0.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+

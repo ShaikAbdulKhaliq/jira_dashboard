@@ -1,0 +1,746 @@
+@use "../../../mixin.module.scss";
+@import "../../../mixin.module.scss";
+
+#lightMode {
+  background-color: $lightBackGround;
+  .chartAndGraph {
+    > div {
+      background-color: $lightSurface;
+      border-radius: 0.2rem;
+      box-shadow: 0px 2px 5px 0px #d6d6d6;
+
+      > div {
+        > p {
+          color: $lightPrimary;
+          font-weight: 500;
+          box-shadow: none;
+        }
+        span {
+          .details {
+            background-color: $lightSurface;
+            box-shadow: 0px 2px 2px 0px #d6d6d6;
+            color: $lightPrimary;
+            > p {
+              &:not(&:last-child) {
+                border-bottom: 0.05rem solid $lightGreyBg;
+              }
+            }
+          }
+        }
+        button {
+          background-color: $primary;
+          color: $background;
+        }
+      }
+    }
+
+    .chartContainer {
+      background-color: $lightBackGround;
+      box-shadow: none;
+      > div {
+        background-color: $lightSurface;
+        > p {
+          @media only screen and (max-width: 768px) {
+            font-size: clamp(1rem, 0rem + 1.25vw, 3rem);
+            min-height: 1rem;
+            @include mixin.flex-container(column, center, center);
+          }
+          box-shadow: none;
+          background-color: $primary;
+          width: 100%;
+          text-align: center;
+          color: $onSurfacePrimary;
+          font-size: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+        }
+      }
+      .loadingContainer {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.4vw;
+        overflow: scroll;
+        background-color: $lightBackGround;
+        @include mixin.flex-container(row, flex-start, flex-start, 2vw);
+        flex-wrap: wrap;
+        .loading,
+        .loader {
+          @media only screen and (max-width: 768px) {
+            width: 30%;
+            height: 140px;
+          }
+          @include mixin.flex-container(row, center, center, 2vw);
+          opacity: 0.7;
+          border-radius: 0.4vw;
+          font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+          width: 30%;
+          height: 200px;
+          position: relative;
+          animation: skeleton-loading 1s linear infinite alternate;
+        }
+        .loader {
+          animation: none !important;
+        }
+      }
+    }
+  }
+
+  .metaDataContainer {
+    background-color: $lightBackGround;
+    .header {
+      > p {
+        background-color: $lightSurface;
+        color: $lightPrimary;
+        box-shadow: 0px 2px 5px 0px #d6d6d6;
+      }
+    }
+    .metaDataList {
+      .table {
+        box-shadow: 0px 2px 5px 0px #d6d6d6;
+        border: none;
+        .columns {
+          background-color: $lightSurface;
+          p {
+            color: $lightGrey;
+          }
+          > div {
+            > p {
+              color: $lightGrey;
+            }
+          }
+        }
+        .rows {
+          .row {
+            background-color: $lightSurface;
+            .toolTip {
+              border: 0.1rem solid $greyBg;
+              background-color: $lightSurface;
+              box-shadow: 0px 2px 10px 0px #f4f4f4;
+              color: $onSurfaceSecondary;
+            }
+            #hideToolTip {
+              display: none;
+            }
+            > p {
+              color: $lightGrey;
+            }
+            .items {
+              > p {
+                background-color: $greyBg;
+                color: $lightGrey;
+                &:hover {
+                  background-color: #0080ff20;
+                  color: #46a0ff;
+                  box-shadow: 0px 2px 5px 0px #d6d6d6;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .gitLogs {
+    color: $lightPrimary;
+    min-width: 100%;
+    overflow: scroll;
+    box-shadow: 0px 2px 5px 0px #d6d6d6;
+    background-color: $lightSurface;
+    // @include mixin.flex-container(row, flex-start, flex-start, 1rem);
+    .gitContainer {
+      .sprintData {
+        .info {
+          p {
+            &:last-child {
+              color: $lightGrey;
+            }
+          }
+        }
+        span {
+          @include mixin.flex-container(row, flex-start, center, 0.4rem);
+          .spActive,
+          .spClosed,.memberName {
+            background-color: $aquaGreenBg;
+            color: $lightAquaGreen;
+          }
+          .spClosed {
+            background-color: $lightGreyBg;
+            color: $lightGrey;
+          }
+          .memberName {
+            color: $primary;
+            background-color: $primaryBg;
+          }
+        }
+      }
+      .commitsContainer {
+        .commit {
+          border: 0.1rem solid #deb74a;
+          background-color: #f3c9561b;
+          .commitHeader {
+            > div {
+              &:first-child {
+                p {
+                  color: #b67f19;
+                  font-weight: 500;
+                }
+              }
+              &:last-child {
+                .timeStamp {
+                  font-weight: normal;
+                  color: $lightYellow;
+                  background-color: $lightYellowBg;
+                  // color: $green;
+                  // background-color: $greenBg;
+                  padding: 0.15rem 0.3rem;
+                  border-radius: 0.2rem;
+                  font-size: 0.555555555555556vw;
+                }
+                img {
+                  width: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                  margin-right: 0.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  background-color: $background;
+  @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+  // padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+  border-radius: 0.4rem;
+  // overflow: scroll;
+  .chartAndGraph {
+    width: 100%;
+    min-height: 18vh;
+    @include mixin.flex-container(column, flex-start, center, 0.5rem);
+    > div {
+      width: 100%;
+      height: 100%;
+      padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+      padding-inline: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+      background-color: $surface;
+      border-radius: 0.2rem;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+      > div {
+        @include mixin.flex-container(row, space-between, center);
+        padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+        > p {
+          padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+          padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+          border-radius: 0.2rem;
+          color: white;
+          font-weight: 500;
+          // box-shadow: 0px 6px 10px 0px rgb(23, 22, 22);
+        }
+        span {
+          @media only screen and (max-width: 768px) {
+            @include mixin.flex-container(
+              column,
+              space-between,
+              flex-end,
+              0.2rem
+            );
+            font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+          }
+          @include mixin.flex-container(row, flex-start, flex-start, 1vw);
+          position: relative;
+          > p {
+            @media only screen and (max-width: 768px) {
+              font-size: clamp(0.5rem, 0rem + 0.225vw, 1.5rem);
+            }
+            font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+            background-color: #bb86fc1f;
+            color: $primary;
+            padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+            padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            border-radius: 0.2rem;
+            box-shadow: 0px 6px 10px 0px rgb(23, 22, 22);
+          }
+          img {
+            width: clamp(1rem, 0rem + 1.25vw, 3rem);
+            // background-color: #262626;
+            border-radius: 0.2rem;
+            padding: 0.3rem 0.2rem;
+            cursor: pointer;
+          }
+          .details {
+            position: absolute;
+            top: 1.1rem;
+            right: 1rem;
+            width: fit-content;
+            height: auto;
+            background-color: $surface;
+            box-shadow: 0px 6px 10px 0px #000000;
+            border-radius: 0.2rem;
+            color: white;
+            z-index: 1;
+            padding: 0.4rem 0.4rem;
+            font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            transition: all ease-in-out 0.2s;
+            > p {
+              &:not(&:last-child) {
+                border-bottom: 0.05rem solid $greyBg;
+              }
+              padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+              font-weight: normal;
+            }
+          }
+          #show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+          }
+          #hide {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(100%);
+          }
+        }
+        button {
+          @media only screen and (max-width: 768px) {
+            font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            border-radius: 0.1rem;
+          }
+          border: none;
+          outline: none;
+          font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+          background-color: $primary;
+          color: $background;
+          padding: 0.1rem 0.3rem;
+          border-radius: 0.2rem;
+        }
+      }
+      // &:nth-child(2) {
+      //   width: 100%;
+      //   height: 21vh;
+      //   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+      //   > div {
+      //     @include mixin.flex-container(row, space-between, flex-start);
+      //     padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+      //   }
+      // }
+      .loaderContainer {
+        width: 100%;
+        height: 70%;
+        @include mixin.flex-container(column, center, center, 1vw);
+      }
+    }
+
+    .chartContainer {
+      @media only screen and (max-width: 768px) {
+        justify-content: space-between;
+        row-gap: 1rem;
+      }
+      width: 100%;
+      min-height: 100%;
+      border-radius: 0.4vw;
+      overflow: scroll;
+      @include mixin.flex-container(row, flex-start, flex-start, 2vw);
+      flex-wrap: wrap;
+      background-color: $background;
+      > div {
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+          height: 200px;
+        }
+        background-color: $surface;
+        border-radius: 0.4vw;
+        width: 47%;
+        height: 100%;
+        // height: 200px;
+        padding: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+        @include mixin.flex-container(column, flex-start, center, 0.5rem);
+        > p {
+          @media only screen and (max-width: 768px) {
+            font-size: clamp(1rem, 0rem + 1.25vw, 3rem);
+            min-height: 1rem;
+            @include mixin.flex-container(column, center, center);
+          }
+          box-shadow: none;
+          background-color: $primary;
+          width: 100%;
+          text-align: center;
+          color: $onSurfacePrimary;
+          font-size: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+        }
+      }
+      .loadingContainer {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.4vw;
+        overflow: scroll;
+        background-color: $background;
+        @include mixin.flex-container(row, flex-start, flex-start, 2vw);
+        flex-wrap: wrap;
+        .loading,
+        .loader {
+          @media only screen and (max-width: 768px) {
+            width: 30%;
+            height: 140px;
+          }
+          @include mixin.flex-container(row, center, center, 2vw);
+          opacity: 0.7;
+          border-radius: 0.4vw;
+          font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+          width: 30%;
+          height: 200px;
+          position: relative;
+          animation: skeleton-loading 1s linear infinite alternate;
+        }
+        .loader {
+          animation: none !important;
+        }
+      }
+    }
+  }
+
+  .metaDataContainer {
+    @media only screen and (max-width: 768px) {
+      @include mixin.flex-container(column, flex-start, flex-start, 0.2rem);
+    }
+    @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+    width: 100%;
+    min-height: 29vh;
+    overflow: visible;
+    background-color: $background;
+    padding: 0;
+
+    .header {
+      width: 100%;
+      height: 15%;
+      @media only screen and (max-width: 768px) {
+      }
+      @include mixin.flex-container(
+        row !important,
+        space-between !important,
+        center !important
+      );
+
+      > p {
+        background-color: $surface;
+        color: $onSurfacePrimary;
+        font-size: clamp(0.068125rem, -0.0002rem + 1.0938vw, 6.8359375rem);
+        padding: clamp(0.11125rem, 0rem + 0.1391vw, 0.33375rem);
+        padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+        border-radius: 0.2rem;
+        @media only screen and (max-width: 768px) {
+          font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+        }
+      }
+    }
+    .metaDataList {
+      width: 100%;
+      height: 90%;
+      overflow: visible;
+      // background-color: $surface;
+      @include mixin.flex-container(row, flex-start, flex-start, 0.5rem);
+      // flex-wrap: wrap;
+      .table {
+        width: 50%;
+        border: 0.1rem solid $greyBg;
+        border-top-left-radius: 0.4rem;
+        border-top-right-radius: 0.4rem;
+        @include mixin.flex-container(column, flex-start, flex-start);
+        .columns {
+          width: 100%;
+          height: 5vh;
+          background-color: $background;
+          border-bottom: 0.1rem solid $greyBg;
+          border-top-left-radius: 0.4rem;
+          border-top-right-radius: 0.4rem;
+          @include mixin.flex-container(row, flex-start, center);
+          > p {
+            color: white;
+            padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            // font-weight: 500;
+            // text-align: center;
+            &:first-child {
+              width: 55%;
+              border-right: 0.1rem solid $greyBg;
+              padding-left: 2.5vw;
+            }
+            &:last-child {
+              width: 46%;
+            }
+          }
+          > div {
+            width: 100%;
+            @include mixin.flex-container(row, center, center, 0.5rem);
+
+            > p {
+              font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+              color: white;
+            }
+          }
+        }
+        .rows {
+          width: 100%;
+          height: 100%;
+          background-color: $surface;
+          @include mixin.flex-container(column, flex-start, flex-start);
+          .row {
+            width: 100%;
+            height: 6vh;
+            position: relative;
+            &:not(&:last-child) {
+              border-bottom: 0.1rem solid $greyBg;
+            }
+            @include mixin.flex-container(row, flex-start, center);
+            // padding-left: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            > p {
+              border-right: 0.1rem solid $greyBg;
+              @include mixin.flex-container(row, flex-start, center);
+              padding-left: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+              width: 50%;
+              color: $grey;
+              font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+              text-align: center;
+            }
+            > img {
+              width: clamp(1rem, 0rem + 1.25vw, 3rem);
+              cursor: pointer;
+              margin-left: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            }
+            .items {
+              width: 50%;
+              height: 100%;
+              overflow: scroll;
+              padding-inline: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+              padding-inline: 0.6rem;
+              @include mixin.flex-container(row, flex-start, center, 0.3rem);
+              flex-wrap: nowrap;
+              span {
+                @include mixin.flex-container(
+                  row,
+                  space-around,
+                  center,
+                  0.2rem
+                );
+                &:first-child {
+                  background-color: $primaryBg;
+                  color: $primary;
+                }
+                &:last-child {
+                  background-color: $greenBg;
+                  color: $green;
+                }
+                width: 3.5rem;
+                padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+                margin-right: 0.3rem;
+                border-radius: 0.2rem;
+                img {
+                  width: 1.04166666666667vw;
+                }
+                p {
+                  font-size: clamp(0.61125rem, 0rem + 0.7641vw, 1.83375rem);
+                  font-weight: 500;
+                }
+              }
+              > p {
+                min-width: fit-content;
+                // min-height: 3.5vh;
+                font-size: clamp(0.61125rem, 0rem + 0.7641vw, 1.83375rem);
+                background-color: $greyBg;
+                color: $grey;
+                padding: 0.2rem 0.4rem;
+                border-radius: 0.2rem;
+                &:hover {
+                  background-color: #0080ff20;
+                  color: #46a0ff;
+                  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+                }
+              }
+            }
+
+            .toolTip {
+              @media only screen and (max-width: 768px) {
+                position: absolute;
+                top: 1.5rem;
+                right: 1rem;
+              }
+              display: block;
+              border: 0.1rem solid $onBackground;
+              z-index: 3;
+              position: absolute;
+              top: 1.9rem;
+              left: 1.7rem;
+              background-color: $surface;
+              box-shadow: 0px 6px 15px 5px rgb(0, 0, 0);
+              border-radius: 0.8rem;
+              border-top-left-radius: 0.1rem;
+              padding: 0.4rem 0.4rem;
+              width: 80%;
+              padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+              font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+              color: $onSurfaceSecondary;
+            }
+            #hideToolTip {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .gitLogs {
+    min-height: 36vh;
+    max-width: 100%;
+    min-width: 100%;
+    margin-top: 0.3rem;
+    display: flex;
+    color: white;
+    overflow: scroll;
+    background-color: $surface;
+    border-radius: 0.4rem;
+
+    .gitContainer {
+      width: 100%;
+      padding: clamp(0.5rem, 0rem + 0.625vw, 0.5rem);
+      // overflow: scroll;
+      @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+      .sprintData {
+        width: 100%;
+        min-height: 5vh;
+        @include mixin.flex-container(row, space-between, flex-start);
+        font-size: clamp(0.7225rem, 0.0003rem + 0.9027vw, 2.166875rem);
+        .info {
+          span {
+            @include mixin.flex-container(row, flex-start, center, 0.4rem);
+            p {
+              &:last-child {
+                font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                padding: 0rem 0.3rem;
+                border-radius: 0.2rem;
+                color: $primary !important;
+                background-color: $primaryBg;
+              }
+            }
+          }
+          > p {
+            font-size: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+            color: $grey;
+            margin-top: 0.2rem;
+            font-weight: 500;
+          }
+        }
+        span {
+          @include mixin.flex-container(row, flex-start, flex-start, 0.2rem);
+          .spActive,
+          .spClosed,
+          .memberName {
+            font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.2rem;
+            background-color: $aquaGreenBg;
+            color: $aquaGreen;
+          }
+          .spClosed {
+            background-color: $greyBg;
+            color: $grey;
+          }
+          .memberName {
+            color: $aquaBlue;
+            background-color: $aquaBlueBg;
+          }
+        }
+      }
+      .commitsContainer {
+        width: 100%;
+        max-height: 30vh;
+        min-height: fit-content;
+        overflow: scroll;
+        padding-right: 0.4rem;
+        @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+        .commit {
+          width: 100%;
+          height: fit-content;
+          border: 0.05rem solid #c59d30;
+          background-color: #edbd391b;
+          border-radius: 0.4rem;
+          padding: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+          padding-left: 0.5rem;
+          .commitHeader {
+            width: 100%;
+            height: 45%;
+            @include mixin.flex-container(row, flex-start, center);
+            > div {
+              width: 50%;
+              height: 100%;
+              @include mixin.flex-container(
+                row,
+                flex-start,
+                flex-start,
+                0.5rem
+              );
+              flex: 1;
+              img {
+                width: clamp(1rem, 0rem + 1.25vw, 3rem);
+                // margin-bottom: 0.3rem;
+              }
+              p {
+                font-size: clamp(
+                  0.068125rem,
+                  -0.0002rem + 1.0938vw,
+                  6.8359375rem
+                );
+                // margin-bottom: 0.3rem;
+              }
+              &:last-child {
+                justify-content: flex-end;
+                font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                .timeStamp {
+                  font-weight: normal;
+                  color: #e6ac24;
+                  background-color: #533f072e;
+                  // color: $green;
+                  // background-color: $greenBg;
+                  padding: 0.15rem 0.3rem;
+                  border-radius: 0.2rem;
+                  font-size: 0.555555555555556vw;
+                }
+                img {
+                  width: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+                  margin-right: 0.2rem;
+                }
+              }
+            }
+          }
+          .content {
+            padding-left: 1.8rem;
+            font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+            p {
+              width: 75%;
+            }
+          }
+        }
+        .loaderContainer {
+          min-height: 27vh;
+        }
+      }
+    }
+    .loaderContainer {
+      min-width: 100%;
+      min-height: 100%;
+      @include mixin.flex-container(column, center, center);
+      color: $lightGrey;
+    }
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #363636;
+  }
+
+  100% {
+    background-color: #161616;
+  }
+}

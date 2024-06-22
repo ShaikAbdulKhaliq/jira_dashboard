@@ -1,0 +1,82 @@
+@use "../../../mixin.module.scss";
+@import "../../../mixin.module.scss";
+
+
+#lightMode{
+  .heading {
+    color: $lightGrey;
+  }
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  @include mixin.flex-container(column, center, center);
+  .heading {
+    @media only screen and (max-width: 768px) {
+      font-size: clamp(0.75rem, 0rem + 0.9375vw, 2.25rem);
+      font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+    }
+    color: $lightGrey;
+    letter-spacing: 0.2em;
+    margin-bottom: 1em;
+  }
+  .loading {
+    @include mixin.flex-container(row, center, center);
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+      border-radius: 50%;
+      animation: dot-pulse2 1.5s ease-in-out infinite;
+    }
+
+    .dot_1 {
+      background-color: #0e83d7;
+      animation-delay: 0s;
+    }
+
+    .dot_2 {
+      background-color: #4285f4;
+      animation-delay: 0.3s;
+    }
+
+    .dot_3 {
+      background: linear-gradient(
+        -100deg,
+        #d13cff 0%,
+        #2b627c 52%,
+        #2b86c5 100%
+      );
+      animation-delay: 0.6s;
+    }
+
+    .dot_4 {
+      background-color: #a24cdb;
+      animation-delay: 0.9s;
+    }
+
+    .dot_5 {
+      background-color: #782bdc;
+      animation-delay: 1.2s;
+    }
+  }
+}
+
+@keyframes dot-pulse2 {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}

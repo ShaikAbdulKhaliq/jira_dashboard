@@ -1,0 +1,180 @@
+@use "../../../mixin.module.scss";
+@import "../../../mixin.module.scss";
+
+
+#lightMode{
+  .popup {
+    background-color: $lightSurface;
+    box-shadow: 0px 2px 5px 0px #d6d6d6;
+
+    > div {
+      @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+      max-width: 75%;
+      margin-top: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+      > p {
+        color: $lightPrimary;
+        &:nth-child(2) {
+          width: 100%;
+          color: $lightGrey;
+          flex-wrap: wrap;
+          font-size: clamp(0.7225rem, 0.0003rem + 0.9027vw, 2.166875rem);
+        }
+      }
+
+      > span {
+        color: $grey;
+        p {
+          width: 100%;
+        }
+        &:last-child {
+          width: fit-content;
+          @include mixin.flex-container(row, flex-start, flex-start,.5rem);
+          p {
+            width: fit-content;
+            background-color: #05c6051a;
+            color: #0dac0d;
+            border: .05rem solid #17a817;
+            @include mixin.flex-container(row, flex-start, flex-start);
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.2rem;
+            font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+            align-self: flex-end; 
+          }
+        }
+      }
+    }
+    > img {
+        box-shadow: 0px 2px 5px 0px #d6d6d6;
+    }
+    .countDownTimer {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      right: 0.4rem;
+      top: 0.2rem;
+      @include mixin.flex-container(column, center, center);
+      .countDown {
+        cursor: pointer;
+        @include mixin.flex-container(column, center, center);
+        svg {
+          margin-top: 0.5rem;
+          width: clamp(1.375rem, 0rem + 1.7188vw, 4.125rem);
+          height: clamp(1.375rem, 0rem + 1.7188vw, 4.125rem);
+        }
+      }
+    }
+  }
+}
+.AlertContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  .popup {
+    @media only screen and (max-width: 768px) {
+      width: 70%;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      width: 45%;
+    }
+    width: 400px;
+    min-height: 16vh;
+    z-index: 5;
+    position: relative;
+    @include mixin.flex-container(row, flex-start, flex-start, 1rem);
+    background-color: $surface;
+    border: 0.1rem solid #06600635;
+    padding: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    > div {
+      @include mixin.flex-container(column, flex-start, flex-start, 0.5rem);
+      max-width: 75%;
+      margin-top: clamp(0.2225rem, 0.0003rem + 0.2777vw, 0.666875rem);
+      > p {
+        color: $onSurfacePrimary;
+        &:nth-child(2) {
+          width: 100%;
+          color: $onSurfaceSecondary;
+          flex-wrap: wrap;
+          font-size: clamp(0.7225rem, 0.0003rem + 0.9027vw, 2.166875rem);
+        }
+      }
+
+      > span {
+        @media only screen and (max-width: 768px) {
+          // margin-top: 8%;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          // margin-top: 7%;
+        }
+        width: 100%;
+        // margin-top: 5%;
+        @include mixin.flex-container(column, flex-start, flex-start, 0.2rem);
+        font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+        color: $grey;
+        p {
+          width: 100%;
+        }
+        &:last-child {
+          width: fit-content;
+          @include mixin.flex-container(row, flex-start, flex-start,.5rem);
+          p {
+            width: fit-content;
+            background-color: #05c6051a;
+            color: #0dac0d;
+            border: .05rem solid #065806;
+            @include mixin.flex-container(row, flex-start, flex-start);
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.2rem;
+            font-size: clamp(0.555625rem, 0rem + 0.6945vw, 1.666875rem);
+            align-self: flex-end; 
+          }
+        }
+      }
+    }
+    > img {
+      padding: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+      border-radius: 100%;
+      // box-shadow: 0px 6px 10px 0px #131313;
+      //   background-color: rgb(21, 20, 20);
+      //   margin-top: clamp(0.5rem, 0rem + 0.625vw, 1.5rem);
+      width: clamp(2rem, 0rem + 2.5vw, 6rem);
+      height: clamp(2rem, 0rem + 2.5vw, 6rem);
+    }
+    .countDownTimer {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      right: 0.4rem;
+      top: 0.2rem;
+      @include mixin.flex-container(column, center, center);
+      .countDown {
+        cursor: pointer;
+        @include mixin.flex-container(column, center, center);
+        svg {
+          margin-top: 0.5rem;
+          width: clamp(1.375rem, 0rem + 1.7188vw, 4.125rem);
+          height: clamp(1.375rem, 0rem + 1.7188vw, 4.125rem);
+        }
+      }
+    }
+  }
+}
+
+.close-button {
+  height: 10%;
+}
+p {
+  padding: 0;
+  margin: 0;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show ellipsis for overflow text */
+}

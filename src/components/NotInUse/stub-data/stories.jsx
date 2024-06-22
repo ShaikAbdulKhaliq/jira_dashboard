@@ -1,0 +1,118 @@
+const stories_data = [
+  {
+    story_name: "Streamlining Panels (Left, Right, Bottom) ",
+    project_id: "10235",
+    story_status: "Dev In Progress",
+    story_id: "74599",
+    sprint_id: "688",
+  },
+  {
+    story_name: "Anchor App UI Creation ",
+    project_id: "10235",
+    story_status: "Dev In Progress",
+    story_id: "74601",
+    sprint_id: "688",
+  },
+  {
+    story_name: "CANVAS UI and Functionalities",
+    project_id: "10235",
+    story_status: "Dev In Progress",
+    story_id: "75203",
+    sprint_id: "688",
+  },
+  {
+    story_name: "Experience page in Monet 2.0",
+    project_id: "10235",
+    story_status: "Dev In Progress",
+    story_id: "74619",
+    sprint_id: "688",
+  },
+  {
+    story_name: "GrapeJS styles R&D ",
+    project_id: "10235",
+    story_status: "Dev In Progress",
+    story_id: "75278",
+    sprint_id: "688",
+  },
+  {
+    story_name: "Workflow creation and testing for each brick",
+    project_id: "10234",
+    story_status: "Dev In Progress",
+    story_id: "74343",
+    sprint_id: "683",
+  },
+  {
+    story_name: "Adding Tested APIs into BOB as Bricks",
+    project_id: "10234",
+    story_status: "Dev In Progress",
+    story_id: "74342",
+    sprint_id: "683",
+  },
+  {
+    story_name: "End to End story for Bitcoin",
+    project_id: "10234",
+    story_status: "To Do",
+    story_id: "75806",
+    sprint_id: "683",
+  },
+  {
+    story_name:
+      "Refactor channel services  to just handle the content resolution consolidating into a single microservice",
+    project_id: "10234",
+    story_status: "Dev In Progress",
+    story_id: "74345",
+    sprint_id: "683",
+  },
+  {
+    story_name: "Identification and testing of all 3rd party APIs",
+    project_id: "10234",
+    story_status: "Dev In Progress",
+    story_id: "74341",
+    sprint_id: "683",
+  },
+  {
+    story_name: "End to End business use Case - Weather data",
+    project_id: "10234",
+    story_status: "Dev In Progress",
+    story_id: "74387",
+    sprint_id: "683",
+  },
+  {
+    story_name: "Content Type Evaluation",
+    project_id: "10234",
+    story_status: "Dev In Progress",
+    story_id: "74385",
+    sprint_id: "683",
+  },
+  {
+    story_name:
+      "Replace the api calls to third party engagement channel api’s in the channel services to use Bob workflows",
+    project_id: "10234",
+    story_status: "Dev In Progress",
+    story_id: "74344",
+    sprint_id: "683",
+  },
+  {
+    story_name: "Mobius API to Partner API reconciliation",
+    project_id: "10234",
+    story_status: "Dev In Progress",
+    story_id: "74386",
+    sprint_id: "683",
+  },
+  {
+    story_name: "Sea Tunnel Sub Process",
+    project_id: "10234",
+    story_status: "Analyze and Code (Dev in progress)",
+    story_id: "74354",
+    sprint_id: "683",
+  },
+  {
+    story_name: "Merging from Monet 1.0 to 2.0",
+    project_id: "10235",
+    story_status: "Dev In Progress",
+    story_id: "74598",
+    sprint_id: "688",
+  },
+];
+
+export default stories_data;
