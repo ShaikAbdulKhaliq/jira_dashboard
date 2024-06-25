@@ -9,16 +9,11 @@ import toast from 'react-hot-toast';
 
 const LoginPage = () => {
   const [errors, setErrors] = useState({});
-  const [submit, setSubmit] = useState(false);
-  const [formDataLoaded, setFormDataLoaded] = useState(false); // To track if formData is loaded
+  const [formDataLoaded, setFormDataLoaded] = useState(false);
 
   const { darkMode } = useContext(MainContext);
-  const { loginResponse, setLoginResponse, formData, setFormData, loginStatus, setLoginStatus } = useContext(LMSContext);
-
-  // const notify = () => toast.loginStatus.statuus(loginStatus.message)
-  ;
+  const { loginResponse, setLoginResponse, setFormData, loginStatus, setLoginStatus } = useContext(LMSContext);
   const navigate = useNavigate();
-
 
   const notify = () => {
     if (loginStatus.status === 'success') {
@@ -28,104 +23,44 @@ const LoginPage = () => {
     }
   };
 
+  useEffect(() => {
+    // Automatically set the form data to your credentials
+    const predefinedFormData = { Name: 'SHAIK ABDUL KHALEED', EmployeeID: 'GS108' };
+    setFormData(predefinedFormData);
+    setFormDataLoaded(true);
+  }, [setFormData]);
 
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setSubmit(false);
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value.toUpperCase()
-    }));
-    if (errors[name]) {
-      setErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length === 0) {
-      try {
-        const response = await getloginCredentials(formData);
-        console.log(response, "response");
-        if (response != null) {
+  useEffect(() => {
+    if (formDataLoaded) {
+      const login = async () => {
+        try {
+          const response = await getloginCredentials({ Name: 'SHAIK ABDUL KHALEED', EmployeeID: 'GS108' });
           setLoginResponse(response);
 
-          // Store formData in local storage
-          localStorage.setItem('formData', JSON.stringify(formData));
+          localStorage.setItem('formData', JSON.stringify({ Name: 'SHAIK ABDUL KHALEED', EmployeeID: 'GS108' }));
 
-          // Set login status and notify
           setLoginStatus({ status: 'success', message: 'Login Successful' });
 
           setTimeout(() => {
-            navigate(`/lms/${formData.EmployeeID}/courses`);
+            navigate(`/lms/GS108/courses`);
           }, 1000);
-        } else {
-          setFormData(() => ({
-            Name: '', EmployeeID: ''
-          }));
-
-          // Set login status and notify
-          setLoginStatus({ status: 'error', message: 'Enter Valid Details' });
-
-          setSubmit(true);
-          console.error("Login failed: No response data");
+        } catch (error) {
+          console.error("Login failed", error);
+          setLoginStatus({ status: 'error', message: 'Login Failed' });
         }
-
-
-      } catch (error) {
-        console.error("Login failed", error);
-      }
-    } else {
-      setErrors(validationErrors);
+      };
+      login();
     }
-  };
-
-  const validate = () => {
-    let validationErrors = {};
-    if (!formData.Name.trim()) validationErrors.Name = 'Name is required';
-    if (!formData.EmployeeID.trim()) validationErrors.EmployeeID = 'Employee ID is required';
-    return validationErrors;
-  };
-
-  useEffect(() => {
-    setSubmit(false);
-    setFormData({ Name: '', EmployeeID: '' });
-    // setLoginStatus({ status: '', message: '' })
-
-    const loadingTimeout = setTimeout(() => {
-      const storedFormData = localStorage.getItem('formData');
-      if (storedFormData) {
-        const parsedFormData = JSON.parse(storedFormData);
-        setFormData(parsedFormData);
-        setFormDataLoaded(true);
-      }
-    }, 1000);
-
-    return () => clearTimeout(loadingTimeout);
-  }, []);
+  }, [formDataLoaded, setLoginResponse, setLoginStatus, navigate]);
 
   useEffect(() => {
     notify();
-
-  }, [loginStatus])
-
-  useEffect(() => {
-
-    if (formDataLoaded) {
-      const navigationTimeout = setTimeout(() => {
-        navigate(`/lms/${formData.EmployeeID}/courses`);
-      }, 1000);
-
-      return () => clearTimeout(navigationTimeout);
-    }
-  }, [formDataLoaded, formData, navigate]);
+  }, [loginStatus]);
 
   return (
     <div className={styles.loginPage} id={!darkMode && styles.lightMode}>
       <div className={styles.loginFormWrapper}>
-        <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <form className={styles.loginForm}>
           <div className={styles.formGroup}>
             <label className={styles.label} htmlFor="Name">Name</label>
             <input
@@ -133,11 +68,10 @@ const LoginPage = () => {
               id="Name"
               name="Name"
               placeholder="Name"
-              className={classNames(styles.input, { [styles.error]: errors.Name })}
-              value={formData.Name}
-              onChange={handleChange}
+              className={classNames(styles.input)}
+              value="SHAIK ABDUL KHALEED"
+              readOnly
             />
-            {errors.Name && <span className={styles.errorMessage}>{errors.Name}</span>}
           </div>
           <div className={styles.formGroup}>
             <label className={styles.label} htmlFor="EmployeeID">Employee ID</label>
@@ -146,15 +80,12 @@ const LoginPage = () => {
               id="EmployeeID"
               name="EmployeeID"
               placeholder="Employee ID"
-              className={classNames(styles.input, { [styles.error]: errors.EmployeeID })}
-              value={formData.EmployeeID}
-              onChange={handleChange}
+              className={classNames(styles.input)}
+              value="GS108"
+              readOnly
             />
-            {errors.EmployeeID && <span className={styles.errorMessage}>{errors.EmployeeID}</span>}
           </div>
-          {submit ? (<p className={styles.errorMessage}>Invalid Name or Employee ID</p>) : ""}
-
-          <button type="submit" className={styles.loginButton}>Login</button>
+          <button type="submit" className={styles.loginButton} disabled>Login</button>
         </form>
       </div>
     </div>
