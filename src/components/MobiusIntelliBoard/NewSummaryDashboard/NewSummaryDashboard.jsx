@@ -259,6 +259,7 @@ const NewSummaryDashBoard = () => {
                                                                     setSelectedBoardSprint(prev => board.sprint_name),
                                                                         setSelectedBoardName(prev => board.board_name)
                                                                 }}
+                                                                title='Double click for sprint overview'
                                                             >
                                                                 <p>{`#${board.board_name}-`}</p>
                                                                 <p>{`${board.sprint_name}`}</p>
