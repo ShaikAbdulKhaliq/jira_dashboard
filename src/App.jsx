@@ -51,7 +51,7 @@ function App() {
       <div className={css.mainHeader} >
         {/* <p onClick={() => navigate('/')}>carousal</p> */}
         <img src={mobius} onClick={() => { navigate(`/mobiusIntelliBoard/summaryDashboard`) }} />
-        <p onClick={() => navigate('/mobiusIntelliBoard/summaryDashboard')}>Mobius IntelliBoard</p>
+        <p onClick={() => navigate('/mobiusIntelliBoard/summaryDashboard')}>Jira IntelliBoard</p>
         {/* <button onClick={()=> setDarkMode(!darkMode)}>theme</button> */}
         <div className={css.themeChanger} >
           {/* <label className={css.switch} >
@@ -69,7 +69,7 @@ function App() {
       <div className={`${css.mainContent}`}>
         <div className={css.sidePanel}>
           <div onClick={() => navigate('/mobiusIntelliBoard/summaryDashboard')}>
-            MobiusIntelliBoard
+            JiraIntelliBoard
           </div>
           <div onClick={() => navigate('/lms/Login')}>
             LMS
